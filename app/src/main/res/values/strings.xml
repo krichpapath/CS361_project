@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">361_menu</string>
+    <string name="menu_name">Hatofu Boyfriend(Logo)</string>
+    <string name="bt_newstory">NEW STORY</string>
+    <string name="bt_start">START</string>
+    <string name="bt_exit">EXIT</string>
+</resources>

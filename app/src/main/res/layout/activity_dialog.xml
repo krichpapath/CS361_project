@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialog_page"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <!-- Top Section: Fixed Size Character Image Boxes -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal">
+
+        <!-- Character 1 Image Box -->
+        <ImageView
+            android:id="@+id/character1Image"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:contentDescription="Character 1 Image"
+            android:scaleType="centerCrop" />
+
+        <!-- Character 2 Image Box -->
+        <ImageView
+            android:id="@+id/character2Image"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:contentDescription="Character 2 Image"
+            android:scaleType="centerCrop" />
+    </LinearLayout>
+
+    <!-- Black Semi-transparent Background for Overlay -->
+    <View
+        android:id="@+id/overlayBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:background="#80000000"
+        android:visibility="gone" />
+
+    <!-- Center Image Overlay -->
+    <ImageView
+        android:id="@+id/overlayImage"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerInParent="true"
+        android:contentDescription="Overlay Image"
+        android:src="@drawable/ricardo_milos"
+        android:visibility="gone" />
+
+    <!-- Dialog Options Container -->
+    <LinearLayout
+        android:id="@+id/dialogOptions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="16dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <!-- Left Options -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/option1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="Option 1" />
+
+            <Button
+                android:id="@+id/option2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Option 2"
+                android:layout_margin="8dp" />
+        </LinearLayout>
+
+        <!-- Right Options -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/option2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Option 3"
+                android:layout_margin="8dp" />
+
+            <Button
+                android:id="@+id/option4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Option 4"
+                android:layout_margin="8dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <!-- Top Section with Two Character Images -->
+
+    <!-- Dialog Options Container -->
+
+    <ImageView
+        android:id="@+id/character1Image"
+        android:layout_width="381dp"
+        android:layout_height="250dp"
+        android:layout_weight="1"
+        android:background="#EEE"
+        android:contentDescription="Character 1 Image"
+        android:scaleType="centerCrop"
+        android:src="@drawable/left_ricardo_milos"
+        tools:layout_editor_absoluteX="23dp"
+        tools:layout_editor_absoluteY="1dp" />
+
+    <ImageView
+        android:id="@+id/character1Image"
+        android:layout_width="353dp"
+        android:layout_height="249dp"
+        android:layout_weight="1"
+        android:background="#EEE"
+        android:contentDescription="Character 2 Image"
+        android:scaleType="centerCrop"
+        android:src="@drawable/left_ricardo_milos"
+        tools:layout_editor_absoluteX="433dp"
+        tools:layout_editor_absoluteY="1dp" />
+
+    <LinearLayout
+        android:id="@+id/dialogOptions"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_margin="20dp"
+        android:background="#C8C6C6"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="264dp">
+
+        <!-- Left Options -->
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/option1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="Option 1" />
+
+        </LinearLayout>
+
+        <!-- Right Options -->
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/option2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="Option 2" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
