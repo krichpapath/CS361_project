@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">361_menu</string>
+    <string name="menu_name">Hatofu Boyfriend(Logo)</string>
+    <string name="bt_newstory">NEW STORY</string>
+    <string name="bt_start">START</string>
+    <string name="bt_exit">EXIT</string>
+
+    <string name="s1">Scene 1: Lab Room, 5:55 PM</string>
+    <string name="s1_d">The three of them are in the university lab room as the sky outside begins to darken. The fluorescent lights flicker slightly. Tae and the protagonist are working while Pued stands by, offering distant moral support.</string>
+    <string name="w1">Tae: "Damn it! Why is this so hard? I don’t want to do this anymore. Let’s go, guys. I can’t take it."</string>
+    <string name="w1_a">Protagonist: "Hmm... *Erebus odora*, a large moth with skull-like patterns. Why did Professor Songsit ask us to study this? I really wonder."</string>
+    <string name="w2">Tae: "It’s almost six already. They’re going to lock the building soon!"</string>
+    <string name="w3">Pued: Smiling coldly, "If you get stuck in the building, you’ll be in trouble. Especially with all the strange rumors about this place lately..."</string>
+    <string name="w4">Protagonist: "Alright, just a moment! Give me two more minutes."</string>
+    <string name="w5">Protagonist: "Ugh... This *Erebus odora*, a large moth with skull-like patterns—why did Professor Songsit make us study this? It’s so damn difficult!"</string>
+    <string name="s3">Scene 3: Encountering the Guard for the First Time</string>
+    <string name="s3_d">A faint knocking sound comes from the door before the guard appears from the shadowy corridor behind it. Suddenly, there are faint footsteps from the hallway outside the lab, but the three pay no attention.</string>
+    <string name="w6">Guard: "Hey kids, why are you still here? It’s late, you know. I need to lock the doors before I go home."</string>
+    <string name="w7">Tae: "Oh, we got caught up with the lab work. We’re about to leave, sir."</string>
+    <string name="w8">Guard: Smiling slyly, "There have been strange reports in this building recently. Let me warn you—if you hear anything odd, *don’t look back*. And under no circumstances should you go to the back door right now."</string>
+    <string name="w9">Protagonist: Looking surprised, "Thanks for the warning, sir!"</string>
+    <string name="w10">Tae: "Hey, Protagonist, we should leave now. They’re going to close the building soon!"</string>
+    <string name="w11">Pued: "The guard just warned us, man. Let’s not push it."</string>
+    <string name="w12">Protagonist: "Just a little more! I’m almost done. Let me wrap this up quickly."</string>
+
+    <string name="c1_s1">Scene 4: Lab Blackout</string>
+    <string name="c1_w1">Tae: "Oh no, Protagonist! Look, the lights are out. They must be about to lock the building. Let’s hurry and get out of here."</string>
+    <string name="c1_w2">Protagonist: Anxiously, "Damn it! I didn’t save my work. Forget it, let’s go. Which way do you think we should leave?"</string>
+    <string name="c1_w3">Pued: "Why don’t we check the front door first?"</string>
+    <string name="c1_w4">Tae: With a panicked expression, "I think the front door’s a good idea, but if it’s locked, we can check the back door."</string>
+    <string name="c1_w5">Protagonist: Hesitating slightly, "Alright, let’s check the front door first..."</string>
+    <string name="c1_s5">Scene 5: At the Door</string>
+    <string name="c1_s6">Scene 6: Spotting a Sign on the Desk - *Be Right Back: Bathroom*</string>
+    <string name="c1_w6">Tae: "Where the hell did the guard go?"</string>
+    <string name="c1_w7">Tae: "What do we do, Protagonist? Should we look for the guard or check the back door?"</string>
+    <string name="c1_w8">Go to the bathroom</string>
+    <string name="c1_w9">Check the back door</string>
+    <string name="c1_w10">Protagonist: "I think we should go to the bathroom first. The guard mentioned he might be there."</string>
+    <string name="c1_w11">Tae: "Do you smell something weird? It smells like... water..."</string>
+    <string name="c1_w12">Protagonist: "Oh no! And that... That red liquid—it’s blood!"</string>
+    <string name="c1_w13">Pued: "Don’t touch it if you don’t want trouble..."</string>
+    <string name="c1_s7">Scene 7: The Eerie Bathroom</string>
+    <string name="c1_w14">Investigate the bathroom</string>
+    <string name="c1_w15">Don’t investigate</string>
+    <string name="c1_w14.1">Protagonist: "What the hell is this? I feel like throwing up."</string>
+    <string name="c1_w14.2">Tae: "Oh, come on... Oh, I mean, you’d better wash your hands immediately!"</string>
+    <string name="c1_w14.3">Pued: "I told you not to touch it! Damn it, I knew something strange was going on."</string>
+    <string name="c1_w14.4">Protagonist: "Forget it. Let’s just keep it together and get out of here..."</string>
+    <string name="c1_s9">Scene 9: The Strange Cat</string>
+    <string name="c1_s9_d">As they leave the bathroom, a thin, bony cat emerges from the corner. It stares at them with an unsettling gaze.</string>
+
+    <string name="c2_s11">Scene 11: The Silent Corridor</string>
+    <string name="c2_w1">Pued: "The guard wasn’t in the bathroom. Let’s head back to the front door."</string>
+    <string name="c2_w2">Protagonist: "You lead the way. I don’t want to go first."</string>
+    <string name="c2_w3">Tae: "But I don’t know the way either... Well, let’s figure it out."</string>
+    <string name="c2_s12">Scene 12: The Wrong Path</string>
+    <string name="c2_w4">Tae: "Damn it! Did you hear that sound? It’s like something’s following us!"</string>
+    <string name="c2_w5">Protagonist: "Shh... It sounds like footsteps..."</string>
+    <string name="c2_w6">Pued: "Oh no, we took the wrong way! We’re heading toward the back door!"</string>
+    <string name="c2_s13">Scene 13: Encounter with the Muscle Man</string>
+    <string name="c2_s13_d">Suddenly, Brother To appears at the end of the hallway, his piercing gaze fixed on them.</string>
+    <string name="c2_w7">Brother To: "Oh... Still here, kids? How about joining me for a little testosterone release, young boy?"</string>
+    <string name="c2_w8">Tae: "Guys, run!!"</string>
+    <string name="c2_s14">Scene 14: Chaos and Panic</string>
+    <string name="c2_s14_d">They try to escape, but there’s no outrunning Brother To’s superior calves. Everyone scrambles to find a way out as he moves closer.</string>
+    <string name="c2_w9">Hide behind a friend</string>
+    <string name="c2_w10">Hide behind Pued</string>
+    <string name="c2_w11">Hide behind Tae</string>
+
+    <!-- Route A1 - Tae -->
+    <string name="c2_w10.1">Tae: "We’re out of options! Do we have anything to fight him with?"</string>
+    <string name="c2_w10.2">Protagonist: "Yeah, we don’t have a choice. I’ve got something we can use."</string>
+    <string name="c2_w10.3">Protagonist: "You!" *kicks*</string>
+    <string name="c2_w10.4">Pued: "No! Aaaaah!!!"</string>
+    <string name="c2_w10.5">Brother To: "Oh, come on now. Don’t run from my embrace, boy."</string>
+    <string name="c2_w10.6">Protagonist: "Damn it! I’ve got to do something!"</string>
+    <string name="c2_w10.7">Use an item</string>
+    <string name="c2_w10.8">Don’t use an item</string>
+    <string name="c2_w10.9">Protagonist: *Transforms into Hentai Kamen!*</string>
+    <string name="c2_w10.10">Brother To: "That’s... Hentai Boy! Oh no, does this mean I have to give up my masculinity now, boy?"</string>
+    <string name="c3_s16">Scene 16: Searching for the Guard</string>
+    <string name="c3_s16_d">After an exhausting battle, they manage to temporarily escape Brother To. The group heads off to find the guard in hopes of getting the exit key.</string>
+    <string name="c3_w1">Protagonist: "We have no choice, Tae. We need to find... the guard’s key."</string>
+    <string name="c3_w2">Tae: "Got it! Let’s get to the front door quickly. We need to get out of here!"</string>
+    <string name="c3_w3">Tae: "Let’s check the guard’s desk. Maybe we’ll find something useful."</string>
+    <string name="c3_s17">Scene 17: Still Searching for the Guard</string>
+    <string name="c3_w4">Protagonist: "Damn it. We don’t have the key. How are we supposed to get out now?"</string>
+    <string name="c3_w5">Tae: "Yeah... We need to get out... but there’s something you need to know first."</string>
+    <string name="c3_w6">Protagonist: *looks at Tae in confusion* "What now? Don’t get all mysterious on me, Tae. Let’s just go already!"</string>
+    <string name="c3_s18">Scene 18: Tae Shows the Key</string>
+    <string name="c3_s18_d">Suddenly, Tae reveals the key to the protagonist and slowly moves closer to him.</string>
+    <string name="c3_w7">Tae: "Protagonist... I’m sorry, but I don’t think you’ll be leaving this place."</string>
+    <string name="c3_w8">Protagonist: *shocked* "What?! What are you saying, Tae? We’re friends, aren’t we?!"</string>
+    <string name="c3_w9">Tae: *chuckles softly* "Friends... Yes, I thought we’d always be friends. But not anymore."</string>
+    <string name="c3_s19">Scene 19: Tae’s Sinister Smile</string>
+    <string name="c3_w10">Tae: "You just don’t understand. I’m doing this... because I love you, Protagonist."</string>
+    <string name="c3_w11">Protagonist: *stunned* "What? What do you mean?"</string>
+    <string name="c3_w12">Tae: "I think you’re going to fall madly in love with me too, aren’t you?"</string>
+    <string name="c3_w13">Protagonist: "Don’t tell me!"</string>
+    <string name="c3_w14">Tae: "I am the *Boss of Gay*, and I can’t let you leave this place. I want you to stay here... with me... forever."</string>
+    <string name="c3_w15">Tae: "If you want to leave, you’ll have to make a choice."</string>
+    <string name="c3_w16">Surrender</string>
+    <string name="c3_w17">Refuse</string>
+    <string name="c3_w16.1">Protagonist: *pauses in silence* "I... I don’t have a choice, do I?"</string>
+    <string name="c3_w16.2">Protagonist: "Alright... fine. Just... take it slow."</string>
+    <string name="c3_w16.3">Tae: "Mmm... I’ll make sure you’ll never forget me. We’ll be together until the end of time. No one will ever take you away from me."</string>
+    <string name="c3_w16.4">Protagonist: *sighs* "I guess it’s happening again."</string>
+    <string name="end_A1">Protagonist: *sighs* "I guess it’s happening again."</string>
+
+
+</resources>
