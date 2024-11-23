@@ -8,6 +8,7 @@
 
     <string name="s1">Scene 1: Lab Room, 5:55 PM</string>
     <string name="s1_d">The three of them are in the university lab room as the sky outside begins to darken. The fluorescent lights flicker slightly. Tae and the protagonist are working while Pued stands by, offering distant moral support.</string>
+    <string name="w"> เต้: "Oh my god, why is this so difficult? I don't want to do it anymore. Let's go, man. I can't do it anymore."</string>
     <string name="w1">Protagonist: "Hmm... *Erebus odora*, a large moth with skull-like patterns. Why did Professor Songsit ask us to study this? I really wonder."</string>
     <string name="w2">Tae: "It’s almost six already. They’re going to lock the building soon!"</string>
     <string name="w3">Pued: Smiling coldly, "If you get stuck in the building, you’ll be in trouble. Especially with all the strange rumors about this place lately..."</string>
@@ -23,7 +24,8 @@
     <string name="w11">Pued: "The guard just warned us, man. Let’s not push it."</string>
     <string name="w12">Protagonist: "Just a little more! I’m almost done. Let me wrap this up quickly."</string>
 
-    <string name="c1_s1">Scene 4: Lab Blackout</string>
+
+    <string name="c1_s4">Scene 4: Lab Blackout</string>
     <string name="c1_w1">Tae: "Oh no, Protagonist! Look, the lights are out. They must be about to lock the building. Let’s hurry and get out of here."</string>
     <string name="c1_w2">Protagonist: Anxiously, "Damn it! I didn’t save my work. Forget it, let’s go. Which way do you think we should leave?"</string>
     <string name="c1_w3">Pued: "Why don’t we check the front door first?"</string>
