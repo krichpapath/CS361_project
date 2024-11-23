@@ -2,72 +2,138 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dialog"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/dialog_page2"
-    android:background="#F5F5F5">
+    android:background="#F5F5F5"
+    >
 
     <!-- Character 1 Image -->
+
+    <!-- Character 2 Image -->
+
+    <!-- Dialog Options Container -->
+
     <ImageView
-        android:id="@+id/character1Image"
+        android:id="@+id/characterImage1"
         android:layout_width="215dp"
         android:layout_height="222dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
+
         android:background="#EEE"
         android:contentDescription="Character 1 Image"
         android:scaleType="centerCrop"
         android:src="@drawable/left_ricardo_milos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.04"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.211" />
 
-    <!-- Character 2 Image -->
     <ImageView
-        android:id="@+id/character2Image"
+        android:id="@+id/characterImage2"
         android:layout_width="215dp"
         android:layout_height="222dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="52dp"
+
         android:background="#EEE"
-        android:contentDescription="Character 2 Image"
+        android:contentDescription="Character 1 Image"
         android:scaleType="centerCrop"
         android:src="@drawable/left_ricardo_milos"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.961"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.211" />
 
-    <!-- Dialog Options Container -->
     <LinearLayout
         android:id="@+id/dialogOptionsContainer"
-        android:layout_width="690dp"
+        android:layout_width="match_parent"
         android:layout_height="133dp"
-        android:layout_margin="20dp"
         android:background="#C8C6C6"
         android:orientation="vertical"
-        android:padding="16dp"
+        android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/character1Image">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.942">
 
         <!-- Text View -->
         <TextView
-            android:id="@+id/title"
+            android:id="@+id/text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:text="Title"
-            android:textSize="24sp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="serif-monospace"
+
+            android:textSize="22sp"
             android:textStyle="bold" />
 
-        <!-- Detail -->
         <TextView
             android:id="@+id/detail"
+            android:layout_width="650dp"
+            android:layout_height="77dp"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="serif-monospace"
+            android:text="@string/s1_d"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:id="@+id/dialogOptions"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Detail"
-            android:textSize="20sp" />
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="8dp">
 
+            <!-- Left Option -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-        <!-- Options Container -->
+                <Button
+                    android:id="@+id/option1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:text="Option 1" />
+            </LinearLayout>
+
+            <!-- Right Option -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/option2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Option 2" />
+            </LinearLayout>
+        </LinearLayout>
+
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/changeTextButton"
+        android:layout_width="153dp"
+        android:layout_height="75dp"
+        android:text="bt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.419" /> <!-- ซ่อนปุ่ม -->
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

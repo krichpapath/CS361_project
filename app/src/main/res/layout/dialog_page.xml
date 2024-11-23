@@ -2,60 +2,72 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/dialog"
+    android:id="@+id/dialo"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5">
+    android:background="#F5F5F5"
+    >
 
     <!-- Character 1 Image -->
-    <ImageView
-        android:id="@+id/character1Image"
-        android:layout_width="215dp"
-        android:layout_height="222dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:background="#EEE"
-        android:contentDescription="Character 1 Image"
-        android:scaleType="centerCrop"
-        android:src="@drawable/left_ricardo_milos"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Character 2 Image -->
 
     <!-- Dialog Options Container -->
+
     <ImageView
-        android:id="@+id/character2Image"
+        android:id="@+id/characterImage1"
         android:layout_width="215dp"
         android:layout_height="222dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="20dp"
+
         android:background="#EEE"
-        android:contentDescription="Character 2 Image"
+        android:contentDescription="Character 1 Image"
         android:scaleType="centerCrop"
         android:src="@drawable/left_ricardo_milos"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.04"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.211" />
+
+    <ImageView
+        android:id="@+id/characterImage2"
+        android:layout_width="215dp"
+        android:layout_height="222dp"
+
+        android:background="#EEE"
+        android:contentDescription="Character 1 Image"
+        android:scaleType="centerCrop"
+        android:src="@drawable/left_ricardo_milos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.961"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.211" />
 
     <LinearLayout
         android:id="@+id/dialogOptionsContainer"
         android:layout_width="690dp"
         android:layout_height="133dp"
-        android:layout_margin="20dp"
         android:background="#C8C6C6"
         android:orientation="vertical"
-        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/character1Image">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.942">
 
         <!-- Text View -->
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:fontFamily="monospace"
+            android:fontFamily="serif-monospace"
             android:text="Text"
             android:textSize="20sp"
             android:textStyle="bold" />

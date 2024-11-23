@@ -28,5 +28,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btstart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create an intent to navigate to the DialogActivity
+                Intent intent = new Intent(MainActivity.this, Dialogpage.class);
+                startActivity(intent);  // Start the activity
+            }
+        });
+
     }
 }
