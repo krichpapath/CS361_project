@@ -70,20 +70,23 @@
     <string name="c2_s14">Scene 14: Chaos and Panic</string>
     <string name="c2_s14_d">They try to escape, but there’s no outrunning Brother To’s superior calves. Everyone scrambles to find a way out as he moves closer.</string>
     <string name="c2_w9">Hide behind a friend</string>
+    <string name="hide2">Who do you want to hide behind?</string>
+    <string name="hide">Where do you want to hide?</string>
     <string name="c2_w10">Hide behind Pued</string>
     <string name="c2_w11">Hide behind Tae</string>
+    <string name="c2_w9_a">Hidden in the TAO-BIN cabinet</string>
 
     <!-- Route A1 - Tae -->
-    <string name="c2_w10.1">Tae: "We’re out of options! Do we have anything to fight him with?"</string>
-    <string name="c2_w10.2">Protagonist: "Yeah, we don’t have a choice. I’ve got something we can use."</string>
-    <string name="c2_w10.3">Protagonist: "You!" *kicks*</string>
-    <string name="c2_w10.4">Pued: "No! Aaaaah!!!"</string>
-    <string name="c2_w10.5">Brother To: "Oh, come on now. Don’t run from my embrace, boy."</string>
-    <string name="c2_w10.6">Protagonist: "Damn it! I’ve got to do something!"</string>
-    <string name="c2_w10.7">Use an item</string>
-    <string name="c2_w10.8">Don’t use an item</string>
-    <string name="c2_w10.9">Protagonist: *Transforms into Hentai Kamen!*</string>
-    <string name="c2_w10.10">Brother To: "That’s... Hentai Boy! Oh no, does this mean I have to give up my masculinity now, boy?"</string>
+    <string name="c2_w10_1">Tae: "We’re out of options! Do we have anything to fight him with?"</string>
+    <string name="c2_w10_2">Protagonist: "Yeah, we don’t have a choice. I’ve got something we can use."</string>
+    <string name="c2_w10_3">Protagonist: "You!" *kicks*</string>
+    <string name="c2_w10_4">Pued: "No! Aaaaah!!!"</string>
+    <string name="c2_w10_5">Brother To: "Oh, come on now. Don’t run from my embrace, boy."</string>
+    <string name="c2_w10_6">Protagonist: "Damn it! I’ve got to do something!"</string>
+    <string name="c2_w10_7">Use an item</string>
+    <string name="c2_w10_8">Don’t use an item</string>
+    <string name="c2_w10_9">Protagonist: *Transforms into Hentai Kamen!*</string>
+    <string name="c2_w10_10">Brother To: "That’s... Hentai Boy! Oh no, does this mean I have to give up my masculinity now, boy?"</string>
     <string name="c3_s16">Scene 16: Searching for the Guard</string>
     <string name="c3_s16_d">After an exhausting battle, they manage to temporarily escape Brother To. The group heads off to find the guard in hopes of getting the exit key.</string>
     <string name="c3_w1">Protagonist: "We have no choice, Tae. We need to find... the guard’s key."</string>
@@ -106,10 +109,10 @@
     <string name="c3_w15">Tae: "If you want to leave, you’ll have to make a choice."</string>
     <string name="c3_w16">Surrender</string>
     <string name="c3_w17">Refuse</string>
-    <string name="c3_w16.1">Protagonist: *pauses in silence* "I... I don’t have a choice, do I?"</string>
-    <string name="c3_w16.2">Protagonist: "Alright... fine. Just... take it slow."</string>
-    <string name="c3_w16.3">Tae: "Mmm... I’ll make sure you’ll never forget me. We’ll be together until the end of time. No one will ever take you away from me."</string>
-    <string name="c3_w16.4">Protagonist: *sighs* "I guess it’s happening again."</string>
+    <string name="c3_w16_1">Protagonist: *pauses in silence* "I... I don’t have a choice, do I?"</string>
+    <string name="c3_w16_2">Protagonist: "Alright... fine. Just... take it slow."</string>
+    <string name="c3_w16_3">Tae: "Mmm... I’ll make sure you’ll never forget me. We’ll be together until the end of time. No one will ever take you away from me."</string>
+    <string name="c3_w16_4">Protagonist: *sighs* "I guess it’s happening again."</string>
     <string name="end_A1">Protagonist: *sighs* "I guess it’s happening again."</string>
 
 
