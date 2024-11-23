@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.view.ViewGroup;  // เพิ่มการอ้างอิงนี้
+import android.view.ViewGroup;
 import android.util.TypedValue;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,7 +15,7 @@ public class Dialogpage extends AppCompatActivity {
     // Array
     private int Index = 0;
     private String[] word;
-    private String[] scene;//
+    private boolean isOptionSelected = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,10 +60,8 @@ public class Dialogpage extends AppCompatActivity {
 
         //array
         word = new String[]{w,w1, w2, w3, w4, w5,s3_d/*6*/, w6, w7, w8, w9, w10, w11, w12,c1_w1/*14*/, c1_w2, c1_w3, c1_w4, c1_w5/*18*/, c1_w6/*19*/,
-                c1_w7/*20*/," ", c1_w10, c1_w11, c1_w12, c1_w13, c1_w14, c1_w15,c1_w14_1, c1_w14_2, c1_w14_3, c1_w14_4
+                c1_w7/*20*/, c1_w10/*21*/, c1_w11, c1_w12, c1_w13, c1_w14/*25*/,c1_w14_1, c1_w14_2, c1_w14_3, c1_w14_4
         };
-        scene = new String[]{s1, s3,};
-
         // เซ็ตข้อความเริ่มต้น
         TextView.setText(s1);
         detailTextView.setText(s1_d);
@@ -74,16 +72,15 @@ public class Dialogpage extends AppCompatActivity {
         ViewGroup.LayoutParams params = detailTextView.getLayoutParams(); // แก้เป็น ViewGroup.LayoutParams
         if (params instanceof ViewGroup.MarginLayoutParams) {  // ตรวจสอบว่า params เป็น MarginLayoutParams หรือไม่
             ViewGroup.MarginLayoutParams marginParams = (ViewGroup.MarginLayoutParams) params;
-            marginParams.topMargin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 10, getResources().getDisplayMetrics());
+            marginParams.topMargin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 20, getResources().getDisplayMetrics());
             detailTextView.setLayoutParams(marginParams);  // ตั้งค่ากลับ
         }
-
-
 
         changeTextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 TextView.setVisibility(View.GONE);
+                isOptionSelected = true;
                 // ตั้งค่าข้อความใหม่จาก messages array โดยใช้ currentIndex
                 detailTextView.setText(word[Index]);
                 Index++;
@@ -99,19 +96,68 @@ public class Dialogpage extends AppCompatActivity {
                     TextView.setVisibility(View.VISIBLE);
                     TextView.setText(c1_s5);
                 }
-                if(detailTextView.getText().toString().equals(word[20])){
+                if (detailTextView.getText().toString().equals(word[20])) {
                     TextView.setVisibility(View.VISIBLE);
                     TextView.setText(c1_s6);
-                }
-                if(detailTextView.getText().toString().equals(word[21])){
-                    TextView.setVisibility(View.GONE);
                     detailTextView.setText(c1_w7);
                     optionButton.setVisibility(View.VISIBLE);
-                     opt1.setText(c1_w8);
+
+                    opt1.setText(c1_w8);
                     opt2.setText(c1_w9);
+
+                    opt1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            isOptionSelected = true;  // อัปเดตสถานะ
+                            optionButton.setVisibility(View.GONE);
+                            TextView.setVisibility(View.GONE);
+                            detailTextView.setText(word[Index]); //อันนี้มันพูดซ้ำ แต่พอเป็นindex++ มันก็ข้ามจาก 20 ไป 22 เลย
+                        }
+                    });
+
+                    opt2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            isOptionSelected = true; // อัปเดตสถานะ
+                            TextView.setVisibility(View.GONE);
+                            optionButton.setVisibility(View.GONE);
+                            detailTextView.setText("Game Over");
+
+                        }
+                    });
                 }
+
+                if(detailTextView.getText().toString().equals(word[25])){ //
+                    TextView.setVisibility(View.VISIBLE);
+                    TextView.setText(c1_s7);
+                    optionButton.setVisibility(View.VISIBLE);
+
+                    opt1.setText(c1_w14);
+                    opt2.setText(c1_w15);
+
+                    opt1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            isOptionSelected = true;
+                            optionButton.setVisibility(View.GONE);
+                            TextView.setVisibility(View.GONE);
+                            Index = 25;
+                        }
+                    });
+
+                    opt2.setOnClickListener(new View.OnClickListener() {//ติดไว้ก่อน ---เล่นกับเเมว
+                        @Override
+                        public void onClick(View v) {
+                            isOptionSelected = true;
+                            TextView.setVisibility(View.GONE);
+                            optionButton.setVisibility(View.GONE);
+                            detailTextView.setText("Game Over");
+                        }
+                    });
+
+                }
+
             }
         });
-
     }
 }

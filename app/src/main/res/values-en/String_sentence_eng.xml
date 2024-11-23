@@ -6,9 +6,13 @@
     <string name="bt_start">START</string>
     <string name="bt_exit">EXIT</string>
 
+    <string name="hurry">Hurry Up!</string>
+    <string name="calm">Calm down.</string>
+    <string name="w1_a">Protagonist: "Wait, let me write the lab plan a little more... It's almost done, can you please stop rushing me? I've forgotten!</string>
     <string name="s1">Scene 1: Lab Room, 5:55 PM</string>
     <string name="s1_d">The three of them are in the university lab room as the sky outside begins to darken. The fluorescent lights flicker slightly. Tae and the protagonist are working while Pued stands by, offering distant moral support.</string>
-    <string name="w"> เต้: "Oh my god, why is this so difficult? I don't want to do it anymore. Let's go, man. I can't do it anymore."</string>
+    <string name="w"> Tea: "Oh my god, why is this so difficult? I don't want to do it anymore. Let's go, man. I can't do it anymore."</string>
+    <string name="w1_a2">Protagonist: "Wait, let me write the lab plan a little more... It's almost done, can you please stop rushing me? I've forgotten!"</string>
     <string name="w1">Protagonist: "Hmm... *Erebus odora*, a large moth with skull-like patterns. Why did Professor Songsit ask us to study this? I really wonder."</string>
     <string name="w2">Tae: "It’s almost six already. They’re going to lock the building soon!"</string>
     <string name="w3">Pued: Smiling coldly, "If you get stuck in the building, you’ll be in trouble. Especially with all the strange rumors about this place lately..."</string>
@@ -44,10 +48,10 @@
     <string name="c1_s7">Scene 7: The Eerie Bathroom</string>
     <string name="c1_w14">Investigate the bathroom</string>
     <string name="c1_w15">Don’t investigate</string>
-    <string name="c1_w14.1">Protagonist: "What the hell is this? I feel like throwing up."</string>
-    <string name="c1_w14.2">Tae: "Oh, come on... Oh, I mean, you’d better wash your hands immediately!"</string>
-    <string name="c1_w14.3">Pued: "I told you not to touch it! Damn it, I knew something strange was going on."</string>
-    <string name="c1_w14.4">Protagonist: "Forget it. Let’s just keep it together and get out of here..."</string>
+    <string name="c1_w14_1">Protagonist: "What the hell is this? I feel like throwing up."</string>
+    <string name="c1_w14_2">Tae: "Oh, come on... Oh, I mean, you’d better wash your hands immediately!"</string>
+    <string name="c1_w14_3">Pued: "I told you not to touch it! Damn it, I knew something strange was going on."</string>
+    <string name="c1_w14_4">Protagonist: "Forget it. Let’s just keep it together and get out of here..."</string>
     <string name="c1_s9">Scene 9: The Strange Cat</string>
     <string name="c1_s9_d">As they leave the bathroom, a thin, bony cat emerges from the corner. It stares at them with an unsettling gaze.</string>
 
@@ -89,8 +93,7 @@
     <string name="c3_w4">Protagonist: "Damn it. We don’t have the key. How are we supposed to get out now?"</string>
     <string name="c3_w5">Tae: "Yeah... We need to get out... but there’s something you need to know first."</string>
     <string name="c3_w6">Protagonist: *looks at Tae in confusion* "What now? Don’t get all mysterious on me, Tae. Let’s just go already!"</string>
-    <string name="c3_s18">Scene 18: Tae Shows the Key</string>
-    <string name="c3_s18_d">Suddenly, Tae reveals the key to the protagonist and slowly moves closer to him.</string>
+    <string name="c3_s18">Scene 18: Suddenly, Tae reveals the key to the protagonist and slowly moves closer to him.</string>
     <string name="c3_w7">Tae: "Protagonist... I’m sorry, but I don’t think you’ll be leaving this place."</string>
     <string name="c3_w8">Protagonist: *shocked* "What?! What are you saying, Tae? We’re friends, aren’t we?!"</string>
     <string name="c3_w9">Tae: *chuckles softly* "Friends... Yes, I thought we’d always be friends. But not anymore."</string>
