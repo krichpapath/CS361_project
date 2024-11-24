@@ -1,5 +1,7 @@
 package com.example.a361_menu;
 
+import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,18 +12,19 @@ import android.util.TypedValue;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import org.w3c.dom.Text;
-
 public class Dialogpage extends AppCompatActivity {
 
     // Array
     private int Index = 0;
     private String[] word;
     private boolean isOptionSelected = false;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.dialog_page2);
+        setContentView(R.layout.dialog_page1);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
         // อ้างอิง TextView และ Button
         TextView detailTextView = findViewById(R.id.detail);
@@ -88,8 +91,9 @@ public class Dialogpage extends AppCompatActivity {
         String c3_w16   = getString(R.string.c3_w16);      String c3_w17    = getString(R.string.c3_w17);
         String c3_w16_1 = getString(R.string.c3_w16_1);    String c3_w16_2  = getString(R.string.c3_w16_2);
         String c3_w16_3 = getString(R.string.c3_w16_3);    String c3_w16_4  = getString(R.string.c3_w16_4);
-        String end_A1   = getString(R.string.end_A1);
-
+        String end_A1   = getString(R.string.end_A1);      String end_A1_1   = getString(R.string.end_A1_1);
+        String c1_w9_1   = getString(R.string.c1_w9_a);
+        String c2_w10_7_a  = getString(R.string.c2_w10_7_a);
 
         //array
         word = new String[]{w,w1, w2, w3, w4, w5,s3_d/*6*/, w6, w7, w8, w9, w10, w11, w12,
@@ -103,7 +107,7 @@ public class Dialogpage extends AppCompatActivity {
 
                 //chapter3
                 c3_s16_d/*50*/,  c3_w1, c3_w2, c3_w3, c3_w4/*54*/, c3_w5, c3_w6, c3_w7/*57*/, c3_w8, c3_w9,
-                c3_w10/*60*/, c3_w11, c3_w12, c3_w13, c3_w14, c3_w15/*65*/,c3_w16_1,c3_w16_2,c3_w16_3,c3_w16_4,end_A1
+                c3_w10/*60*/, c3_w11, c3_w12, c3_w13, c3_w14, c3_w15/*65*/,c3_w16_1,c3_w16_2,c3_w16_3,c3_w16_4,end_A1,end_A1_1
         };
 
         // เซ็ตข้อความเริ่มต้น
@@ -116,7 +120,7 @@ public class Dialogpage extends AppCompatActivity {
         ViewGroup.LayoutParams params = detailTextView.getLayoutParams(); // แก้เป็น ViewGroup.LayoutParams
         if (params instanceof ViewGroup.MarginLayoutParams) {  // ตรวจสอบว่า params เป็น MarginLayoutParams หรือไม่
             ViewGroup.MarginLayoutParams marginParams = (ViewGroup.MarginLayoutParams) params;
-            marginParams.topMargin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 20, getResources().getDisplayMetrics());
+            marginParams.topMargin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 10, getResources().getDisplayMetrics());
             detailTextView.setLayoutParams(marginParams);  // ตั้งค่ากลับ
         }
 
@@ -161,7 +165,7 @@ public class Dialogpage extends AppCompatActivity {
                             isOptionSelected = true;
                             TextView.setVisibility(View.GONE);
                             optionButton.setVisibility(View.GONE);
-                            detailTextView.setText("Game Over");
+                            detailTextView.setText(c1_w9_1);
                         }
                     });
                 } else if (detailTextView.getText().toString().equals(word[25])) { //สำรวจหรือไม่สำรวจห้องน้ำ
@@ -187,7 +191,8 @@ public class Dialogpage extends AppCompatActivity {
                             isOptionSelected = true;
                             TextView.setVisibility(View.GONE);
                             optionButton.setVisibility(View.GONE);
-                            detailTextView.setText("Game Over");
+                            Intent intent = new Intent(Dialogpage.this, Dialogpage_NosearchToilet.class);
+                            startActivity(intent);
                         }
                     });
                 } else if (detailTextView.getText().toString().equals(word[30])) {
@@ -250,7 +255,8 @@ public class Dialogpage extends AppCompatActivity {
                             isOptionSelected = true;
                             TextView.setVisibility(View.GONE);
                             optionButton.setVisibility(View.GONE);
-                            detailTextView.setText("Game Over");
+                            Intent intent = new Intent(Dialogpage.this, Dialogpage_RootB.class);
+                            startActivity(intent);  // Start the activity
                         }
                     });
                 } else if (detailTextView.getText().toString().equals(word[47])) { //ใช้ไอเทอมหรือไม่ใช้
@@ -274,7 +280,7 @@ public class Dialogpage extends AppCompatActivity {
                             isOptionSelected = true;
                             TextView.setVisibility(View.GONE);
                             optionButton.setVisibility(View.GONE);
-                            detailTextView.setText("Game Over");
+                            detailTextView.setText(c2_w10_7_a);
                         }
                     });
                 } else if (detailTextView.getText().toString().equals(word[50])) {
@@ -289,10 +295,10 @@ public class Dialogpage extends AppCompatActivity {
                 } else if (detailTextView.getText().toString().equals(word[60])) {
                     TextView.setVisibility(View.VISIBLE);
                     TextView.setText(c3_s19);
-                } else if (detailTextView.getText().toString().equals(word[65])) { //เสียตัวหรือไม่เสียตัว
+                } else if (detailTextView.getText().toString().equals(word[65])) {
                     optionButton.setVisibility(View.VISIBLE);
-                    opt1.setText(c3_w17);
-                    opt2.setText(c3_w16);
+                    opt1.setText(c3_w17);//เสียตัว
+                    opt2.setText(c3_w16);//ไม่เสียตัว
 
                     opt1.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -310,7 +316,8 @@ public class Dialogpage extends AppCompatActivity {
                             isOptionSelected = true;
                             TextView.setVisibility(View.GONE);
                             optionButton.setVisibility(View.GONE);
-                            detailTextView.setText("Game Over");
+                            Intent intent = new Intent(Dialogpage.this, Dialogpage_RootA1_bad.class);
+                            startActivity(intent);  // Start the activity
                         }
                     });
                 }

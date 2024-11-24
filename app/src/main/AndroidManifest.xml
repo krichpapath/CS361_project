@@ -13,9 +13,17 @@
         android:theme="@style/Theme._361_menu"
         tools:targetApi="31">
         <activity
-            android:name=".Dialogpage"
+            android:name=".Dialogpage_NosearchToilet"
             android:exported="false" />
-        <!-- Main Activity (starting page) -->
+        <activity
+            android:name=".Dialogpage_RootB"
+            android:exported="false" />
+        <activity
+            android:name=".Dialogpage_RootA1_bad"
+            android:exported="false" />
+        <activity
+            android:name=".Dialogpage"
+            android:exported="false" /> <!-- Main Activity (starting page) -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
