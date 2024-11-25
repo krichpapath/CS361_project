@@ -1,141 +1,153 @@
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/dialog"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5"
-    >
-
-    <!-- Character 1 Image -->
-
-    <!-- Character 2 Image -->
-
-    <!-- Dialog Options Container -->
-
-    <ImageView
-        android:id="@+id/characterImage1"
-        android:layout_width="215dp"
-        android:layout_height="222dp"
-
-        android:background="#EEE"
-        android:contentDescription="Character 1 Image"
-        android:scaleType="centerCrop"
-        android:src="@drawable/left_ricardo_milos"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.04"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.211" />
-
-    <ImageView
-        android:id="@+id/characterImage2"
-        android:layout_width="215dp"
-        android:layout_height="222dp"
-
-        android:background="#EEE"
-        android:contentDescription="Character 1 Image"
-        android:scaleType="centerCrop"
-        android:src="@drawable/left_ricardo_milos"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.961"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.211" />
+    android:background="#F5F5F5">
 
     <LinearLayout
-        android:id="@+id/dialogOptionsContainer"
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="133dp"
-        android:background="#C8C6C6"
-        android:orientation="vertical"
-        android:layout_marginStart="10dp"
-    android:layout_marginEnd="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.942">
-
-        <!-- Text View -->
-        <TextView
-            android:id="@+id/text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:fontFamily="serif-monospace"
-
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/detail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:fontFamily="serif-monospace"
-            android:text="@string/s1_d"
-            android:textSize="14sp" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <LinearLayout
-
-            android:id="@+id/dialogOptions"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="5dp">
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_weight="4"
+            android:orientation="horizontal">
 
-            <!-- Left Option -->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <ImageView
+                android:id="@+id/characterImage1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center"
-                >
+                android:background="#EEE"
+                android:contentDescription="Character 1 Image"
+                android:gravity="start"
+                android:scaleType="fitCenter"
+                android:src="@drawable/left_ricardo_milos" />
 
-                <Button
-                    android:id="@+id/option1"
-                    android:layout_width="227dp"
-                    android:layout_height="match_parent"
-                    android:text="Option 1" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
 
-            </LinearLayout>
-
-            <!-- Right Option -->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <ImageView
+                android:id="@+id/characterImage2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center">
-
-                <Button
-                    android:id="@+id/option2"
-                    android:layout_width="227dp"
-                    android:layout_height="match_parent"
-                    android:text="Option 2" />
-            </LinearLayout>
+                android:background="#EEE"
+                android:contentDescription="Character 2 Image"
+                android:gravity="end"
+                android:scaleType="fitCenter"
+                android:src="@drawable/left_ricardo_milos" />
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/dialogOptionsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:orientation="vertical">
 
+            <!-- Text View -->
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:fontFamily="@font/itim_regular"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:id="@+id/detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:fontFamily="@font/itim_regular"
+                android:text="@string/test"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/transparentComponent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#B3000000"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/dialogOptions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+        <!-- Left Button -->
+        <Button
+            android:id="@+id/option1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:fontFamily="@font/itim_regular"
+            android:text="Option 1"
+            android:textSize="24sp"
+            android:layout_marginHorizontal="20dp" />
+
+        <View
+            android:id="@+id/blankSpace"
+            android:layout_width="180dp"
+            android:layout_height="match_parent" />
+
+        <!-- Right Button -->
+        <Button
+            android:id="@+id/option2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:fontFamily="@font/itim_regular"
+            android:text="Option 2"
+            android:textSize="24sp"
+            android:layout_marginHorizontal="20dp" />
     </LinearLayout>
 
     <Button
         android:id="@+id/changeTextButton"
-        android:layout_width="153dp"
-        android:layout_height="75dp"
-        android:text="bt"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#46FF0000"
+        android:visibility="visible"
+        android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.419" /> <!-- ซ่อนปุ่ม -->
-
+        app:layout_constraintVertical_bias="0.95" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,16 +18,6 @@ public class MainActivity extends AppCompatActivity {
         Button btNewStory = findViewById(R.id.bt_newstory);
         Button btstart = findViewById(R.id.bt_start);
 
-        // Set the OnClickListener
-        btNewStory.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Create an intent to navigate to the DialogActivity
-                Intent intent = new Intent(MainActivity.this, DialogActivity.class);
-                startActivity(intent);  // Start the activity
-            }
-        });
-
         btstart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

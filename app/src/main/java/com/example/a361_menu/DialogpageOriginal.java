@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Dialogpage extends AppCompatActivity {
+public class DialogpageOriginal extends AppCompatActivity {
 
     // Array
     private int Index = 0;
@@ -190,7 +190,7 @@ public class Dialogpage extends AppCompatActivity {
                             isOptionSelected = true;
                             textView.setVisibility(View.GONE);
                             optionButton.setVisibility(View.GONE);
-                            Intent intent = new Intent(Dialogpage.this, Dialogpage_NosearchToilet.class);
+                            Intent intent = new Intent(DialogpageOriginal.this, Dialogpage_NosearchToilet.class);
                             startActivity(intent);
                         }
                     });
@@ -254,7 +254,7 @@ public class Dialogpage extends AppCompatActivity {
                             isOptionSelected = true;
                             textView.setVisibility(View.GONE);
                             optionButton.setVisibility(View.GONE);
-                            Intent intent = new Intent(Dialogpage.this, Dialogpage_RootB.class);
+                            Intent intent = new Intent(DialogpageOriginal.this, Dialogpage_RootB.class);
                             startActivity(intent);  // Start the activity
                         }
                     });
@@ -315,7 +315,7 @@ public class Dialogpage extends AppCompatActivity {
                             isOptionSelected = true;
                             textView.setVisibility(View.GONE);
                             optionButton.setVisibility(View.GONE);
-                            Intent intent = new Intent(Dialogpage.this, Dialogpage_RootA1_bad.class);
+                            Intent intent = new Intent(DialogpageOriginal.this, Dialogpage_RootA1_bad.class);
                             startActivity(intent);  // Start the activity
                         }
                     });
