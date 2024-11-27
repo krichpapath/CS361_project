@@ -6,36 +6,34 @@
     <string name="bt_start">START</string>
     <string name="bt_exit">EXIT</string>
 
-    <string name="hurry">Hurry Up!</string>
-    <string name="calm">Calm down.</string>
     <string name="test">Test</string>
-    <string name="s1">Scene 1: Lab Room, 5:55 PM</string>
     <string name="s1_d">The three of them are in the university lab room as the sky outside begins to darken. The fluorescent lights flicker slightly. Tae and the Nong Time are working while Pued stands by, offering distant moral support.</string>
-    <string name="w"> Tae: "Oh my god, I don't want to do it anymore."</string>
-    <string name="w1_a2">Nong Time: "Wait, let me write the lab plan a little more... It's almost done, can you please stop rushing me? I've forgotten!"</string>
-    <string name="w1">Nong Time: "Hmm... *Erebus odora*, a large moth with skull-like patterns. Why did Professor Songsit ask us to study this? I really wonder."</string>
+    <string name="w"> Tae: "Oh my god, I don't want to do it anymore..."</string>
+    <string name="w_a1"> Tae: "Hurry up! I can't take it anymore..."</string>
+    <string name="w1">Nong Time: "Wait, let me write the lab plan a little more... It's almost done, can you please stop rushing me? I've forgotten!"</string>
     <string name="w2">Tae: "It’s almost six already. They’re going to lock the building soon!"</string>
     <string name="w3">Pued: Smiling coldly, "If you get stuck in the building, you’ll be in trouble. Especially with all the strange rumors about this place lately..."</string>
     <string name="w4">Nong Time: "Alright, just a moment! Give me two more minutes."</string>
     <string name="w5">Nong Time: "Ugh... This *Erebus odora*, a large moth with skull-like patterns—why did Professor Songsit make us study this? It’s so damn difficult!"</string>
-    <string name="s3">Scene 2: Encountering the Guard for the First Time</string>
+
     <string name="s3_d">A faint knocking sound comes from the door before the guard appears from the shadowy corridor behind it. Suddenly, there are faint footsteps from the hallway outside the lab, but the three pay no attention.</string>
     <string name="w6">Guard: "Hey kids, why are you still here? It’s late, you know. I need to lock the doors before I go home."</string>
     <string name="w7">Tae: "Oh, we got caught up with the lab work. We’re about to leave, sir."</string>
-    <string name="w8">Guard: Smiling slyly, "There have been strange reports in this building recently. Let me warn you—if you hear anything odd, *don’t look back*. And under no circumstances should you go to the back door right now."</string>
-    <string name="w9">Nong Time: Looking surprised, "Thanks for the warning, sir!"</string>
+    <string name="w8">Guard: "There have been strange reports in this building recently. Let me warn you,Under no circumstances..."</string>
+    <string name="w8_a1">Guard: "Shouldn't you go to the back door right now."</string>
+    <string name="w9">Nong Time: "Umm...Uhh...Thanks for the warning, sir!"</string>
     <string name="w10">Tae: "Hey, Nong Time, we should leave now. They’re going to close the building soon!"</string>
     <string name="w11">Pued: "The guard just warned us, man. Let’s not push it."</string>
     <string name="w12">Nong Time: "Just a little more! I’m almost done. Let me wrap this up quickly."</string>
 
 
-    <string name="c1_s4">Scene 3: Lab Blackout</string>
+
     <string name="c1_w1">Tae: "Oh no, Nong Time! Look, the lights are out. They must be about to lock the building. Let’s hurry and get out of here."</string>
-    <string name="c1_w2">Nong Time: Anxiously, "Damn it! I didn’t save my work. Forget it, let’s go. Which way do you think we should leave?"</string>
+    <string name="c1_w2">Nong Time: "Damn it! I didn’t save my work. Forget it, let’s go. Which way do you think we should leave?"</string>
     <string name="c1_w3">Pued: "Why don’t we check the front door first?"</string>
     <string name="c1_w4">Tae: With a panicked expression, "I think the front door’s a good idea, but if it’s locked, we can check the back door."</string>
-    <string name="c1_w5">Nong Time: Hesitating slightly, "Alright, let’s check the front door first..."</string>
-    <string name="c1_s5">Scene 4: At the Door</string>
+    <string name="c1_w5">Nong Time: "Umm..."</string>
+    <string name="c1_w5_a1">Nong Time: "Alright, let’s check the front door first..."</string>
     <string name="c1_s6">Scene 6: Spotting a Sign on the Desk - *Be Right Back: Bathroom*</string>
     <string name="c1_w6">Tae: "Where the hell did the guard go?"</string>
     <string name="c1_w7">Tae: "What do we do, Nong Time? Should we look for the guard or check the back door?"</string>
@@ -45,8 +43,7 @@
     <string name="c1_w11">Tae: "Do you smell something weird? It smells like... water..."</string>
     <string name="c1_w12">Nong Time: Oh no! What is that? It\'s red...?</string>
     <string name="c1_w13">Pued: "Don’t touch it if you don’t want trouble..."</string>
-    <string name="c1_s7">Scene 7: The Eerie Bathroom</string>
-    <string name="c1_w14">Tae: Why don\'t you go ahead and pick it up!!</string>
+    <string name="c1_w14">"Tae: Would you like to taste it? It might be Hell Blue Boy's red juice."</string>
     <string name="c1_w15">Pick up mistery red stuff</string>
     <string name="c1_w16">Don\'t pick it up</string>
     <string name="c1_w15_1">MC: "Oh god, this is underwear soaked in cum water!!" *about to puke*</string>

@@ -47,7 +47,7 @@ public class Dialogpage extends AppCompatActivity {
         ImageView charImageView2 = findViewById(R.id.characterImage2);
         ImageView backgroundView = findViewById(R.id.background);
 
-        textView.setText(getString(R.string.s1));
+        textView.setText(getString(R.string.s1_d));
         detailTextView.setText(getString(R.string.s1_d));
         charImageView1.setImageResource(R.drawable.empty);
         charImageView2.setImageResource(R.drawable.empty);
@@ -56,14 +56,14 @@ public class Dialogpage extends AppCompatActivity {
         //scene1
         dialogues.add(new Dialog(null, getString(R.string.w), 0, R.drawable.tae_angry2));
         dialogues.add(new Dialog(null, getString(R.string.w_a1), 0, R.drawable.tae_fear));
-        dialogues.add(new Dialog(null, getString(R.string.w1_a2), R.drawable.mc_normal, 0));
+        dialogues.add(new Dialog(null, getString(R.string.w1), R.drawable.mc_normal, 0));
         dialogues.add(new Dialog(null, getString(R.string.w2), 0, 1));
         dialogues.add(new Dialog(null, getString(R.string.w3), 0, R.drawable.pued_normal));
         dialogues.add(new Dialog(null, getString(R.string.w4), 1, 0));
         dialogues.add(new Dialog(null, getString(R.string.w5), R.drawable.mc_cry, 0));
 
         //scene2
-        dialogues.add(new Dialog(getString(R.string.s3), getString(R.string.s3_d), 0, 0));
+        dialogues.add(new Dialog(getString(R.string.s3_d), getString(R.string.s3_d), 0, 0));
         dialogues.add(new Dialog(null, getString(R.string.w6), R.drawable.guard_normal, 0));
         dialogues.add(new Dialog(null, getString(R.string.w7), 1, R.drawable.tae_normal2));
         dialogues.add(new Dialog(null, getString(R.string.w8), R.drawable.guard_smile, 0));

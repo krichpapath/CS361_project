@@ -68,6 +68,7 @@ public class dialog_page2 extends AppCompatActivity {
 
             //scene14
             dialogues.add(new Dialog(getString(R.string.c2_scene_14_title), getString(R.string.c2_scene_14_desc), 0, R.drawable.ricardo_flex));
+            dialogues.add(new Dialog(getString(R.string.c2_scene_14_title), getString(R.string.c2_scene_14_desc1), 0, R.drawable.ricardo_flex));
             dialogues.add(new Dialog(getString(R.string.c2_scene_14_title), getString(R.string.c2_scene_14_desc), getString(R.string.c2_hide_pued), getString(R.string.c2_hide_tae), "hindBehindPued", "hindBehindTae", R.drawable.pued_run, R.drawable.tae_smile));
 
             changeTextButton.setOnClickListener(new View.OnClickListener() {
