@@ -2,325 +2,293 @@ package com.example.a361_menu;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.ColorFilter;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.os.Bundle;
-import android.util.TypedValue;
 import android.view.View;
-import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+import java.util.List;
+import android.os.Handler;
+
 public class Dialogpage extends AppCompatActivity {
 
-    // Array
     private int Index = 0;
-    private String[] word;
-    private boolean isOptionSelected = false;
-
+    List<Dialog> dialogues = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dialog_page1);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        // อ้างอิง TextView และ Button
         TextView detailTextView = findViewById(R.id.detail);
         TextView textView = findViewById(R.id.text);
         Button changeTextButton = findViewById(R.id.changeTextButton);
         LinearLayout optionButton = findViewById(R.id.dialogOptions);
-        Button opt1 =findViewById(R.id.option1);
-        Button opt2 =findViewById(R.id.option2);
+        ImageButton opt1 =findViewById(R.id.option1);
+        ImageButton opt2 =findViewById(R.id.option2);
+        TextView opt1Text = findViewById(R.id.option1Text);
+        TextView opt2Text = findViewById(R.id.option2Text);
+        View blackScreen = findViewById(R.id.blackScreen);
+        ImageView charImageView1 = findViewById(R.id.characterImage1);
+        ImageView charImageView2 = findViewById(R.id.characterImage2);
+        ImageView backgroundView = findViewById(R.id.background);
 
-        DialogHelper dialogHelper = new DialogHelper(this, detailTextView, textView, optionButton, opt1, opt2);
-
-        String s1   = getString(R.string.s1);       String s1_d  = getString(R.string.s1_d);
-        String w   = getString(R.string.w);
-        String w1   = getString(R.string.w1);       String w2    = getString(R.string.w2);
-        String w3   = getString(R.string.w3);       String w4    = getString(R.string.w4);
-        String w5   = getString(R.string.w5);       String w6    = getString(R.string.w6);
-        String w7   = getString(R.string.w7);       String w8    = getString(R.string.w8);
-        String w9   = getString(R.string.w9);       String w10   = getString(R.string.w10);
-        String w11  = getString(R.string.w11);      String w12   = getString(R.string.w12);
-        String s3   = getString(R.string.s3);       String s3_d  = getString(R.string.s3_d);
-
-
-        String c1_s4   = getString(R.string.c1_s4);       String c1_w1  = getString(R.string.c1_w1);
-        String c1_w2   = getString(R.string.c1_w2);       String c1_w3  = getString(R.string.c1_w3);
-        String c1_w4   = getString(R.string.c1_w4);       String c1_w5  = getString(R.string.c1_w5);
-        String c1_s5   = getString(R.string.c1_s5);       String c1_s6  = getString(R.string.c1_s6);
-        String c1_w6   = getString(R.string.c1_w6);       String c1_w7  = getString(R.string.c1_w7);
-        String c1_w8   = getString(R.string.c1_w8);       String c1_w9  = getString(R.string.c1_w9);
-        String c1_w10  = getString(R.string.c1_w10);      String c1_w11 = getString(R.string.c1_w11);
-        String c1_w12  = getString(R.string.c1_w12);      String c1_w13 = getString(R.string.c1_w13);
-        String c1_s7   = getString(R.string.c1_s7);       String c1_w14 = getString(R.string.c1_w14);
-        String c1_w15  = getString(R.string.c1_w15);      String c1_w14_1 = getString(R.string.c1_w14_1);
-        String c1_w14_2 = getString(R.string.c1_w14_2);   String c1_w14_3 = getString(R.string.c1_w14_3);
-        String c1_w14_4 = getString(R.string.c1_w14_4);   String c1_s9  = getString(R.string.c1_s9);
-        String c1_s9_d = getString(R.string.c1_s9_d);
-
-        String c2_s11 = getString(R.string.c2_s11);       String c2_w1  = getString(R.string.c2_w1);
-        String c2_w2  = getString(R.string.c2_w2);       String c2_w3  = getString(R.string.c2_w3);
-        String c2_s12 = getString(R.string.c2_s12);       String c2_w4  = getString(R.string.c2_w4);
-        String c2_w5  = getString(R.string.c2_w5);       String c2_w6  = getString(R.string.c2_w6);
-        String c2_s13 = getString(R.string.c2_s13);       String c2_s13_d = getString(R.string.c2_s13_d);
-        String c2_w7  = getString(R.string.c2_w7);       String c2_w8  = getString(R.string.c2_w8);
-        String c2_s14 = getString(R.string.c2_s14);       String c2_s14_d = getString(R.string.c2_s14_d);
-        String c2_w9  = getString(R.string.c2_w9);       String c2_w10 = getString(R.string.c2_w10);
-        String c2_w11 = getString(R.string.c2_w11);       String c2_w9_a = getString(R.string.c2_w9_a);
-        String c2_w10_1  = getString(R.string.c2_w10_1);       String c2_w10_2  = getString(R.string.c2_w10_2);
-        String c2_w10_3  = getString(R.string.c2_w10_3);       String c2_w10_4  = getString(R.string.c2_w10_4);
-        String c2_w10_5  = getString(R.string.c2_w10_5);       String c2_w10_6  = getString(R.string.c2_w10_6);
-        String c2_w10_7  = getString(R.string.c2_w10_7);       String c2_w10_8  = getString(R.string.c2_w10_8);
-        String c2_w10_9  = getString(R.string.c2_w10_9);       String c2_w10_10 = getString(R.string.c2_w10_10);
-        String hide = getString(R.string.hide);             String hide2 = getString(R.string.hide2);
-
-        String c3_s16   = getString(R.string.c3_s16);       String c3_s16_d  = getString(R.string.c3_s16_d);
-        String c3_w1    = getString(R.string.c3_w1);       String c3_w2     = getString(R.string.c3_w2);
-        String c3_w3    = getString(R.string.c3_w3);       String c3_s17    = getString(R.string.c3_s17);
-        String c3_w4    = getString(R.string.c3_w4);       String c3_w5     = getString(R.string.c3_w5);
-        String c3_w6    = getString(R.string.c3_w6);       String c3_s18    = getString(R.string.c3_s18);
-        String c3_w7    = getString(R.string.c3_w7);       String c3_w8     = getString(R.string.c3_w8);
-        String c3_w9    = getString(R.string.c3_w9);       String c3_s19    = getString(R.string.c3_s19);
-        String c3_w10   = getString(R.string.c3_w10);      String c3_w11    = getString(R.string.c3_w11);
-        String c3_w12   = getString(R.string.c3_w12);      String c3_w13    = getString(R.string.c3_w13);
-        String c3_w14   = getString(R.string.c3_w14);      String c3_w15    = getString(R.string.c3_w15);
-        String c3_w16   = getString(R.string.c3_w16);      String c3_w17    = getString(R.string.c3_w17);
-        String c3_w16_1 = getString(R.string.c3_w16_1);    String c3_w16_2  = getString(R.string.c3_w16_2);
-        String c3_w16_3 = getString(R.string.c3_w16_3);    String c3_w16_4  = getString(R.string.c3_w16_4);
-        String end_A1   = getString(R.string.end_A1);      String end_A1_1   = getString(R.string.end_A1_1);
-        String c1_w9_1   = getString(R.string.c1_w9_a);
-        String c2_w10_7_a  = getString(R.string.c2_w10_7_a);
-
-        //array
-        word = new String[]{w,w1, w2, w3, w4, w5,s3_d/*6*/, w6, w7, w8, w9, w10, w11, w12,
-                //chapter1
-                c1_w1/*14*/, c1_w2, c1_w3, c1_w4, c1_w5/*18*/, c1_w6/*19*/,
-                c1_w7/*20*/, c1_w10/*21*/, c1_w11, c1_w12, c1_w13, c1_w14/*25*/,c1_w14_1, c1_w14_2, c1_w14_3, c1_w14_4,c1_s9_d/*30*/,
-
-                //chapter2
-                c2_w1/*31*/,c2_w2,c2_w3,c2_w4/*34*/,c2_w5,c2_w6,c2_w7/*37*/,c2_w8,c2_s14_d/*39*/,hide/*40*/,hide2/*41*/,c2_w10_1,c2_w10_2,c2_w10_3,
-                c2_w10_4, c2_w10_5,c2_w10_6/*47*/,c2_w10_9,c2_w10_10,
-
-                //chapter3
-                c3_s16_d/*50*/,  c3_w1, c3_w2, c3_w3, c3_w4/*54*/, c3_w5, c3_w6, c3_w7/*57*/, c3_w8, c3_w9,
-                c3_w10/*60*/, c3_w11, c3_w12, c3_w13, c3_w14, c3_w15/*65*/,c3_w16_1,c3_w16_2,c3_w16_3,c3_w16_4,end_A1,end_A1_1
-        };
-
-        // เซ็ตข้อความเริ่มต้น
-        textView.setText(s1);
-        detailTextView.setText(s1_d);
+        textView.setText(getString(R.string.s1));
+        detailTextView.setText(getString(R.string.s1_d));
+        charImageView1.setImageResource(R.drawable.empty);
+        charImageView2.setImageResource(R.drawable.empty);
         optionButton.setVisibility(View.GONE);
 
+        //scene1
+        dialogues.add(new Dialog(null, getString(R.string.w), 0, R.drawable.tae_angry2));
+        dialogues.add(new Dialog(null, getString(R.string.w_a1), 0, R.drawable.tae_fear));
+        dialogues.add(new Dialog(null, getString(R.string.w1_a2), R.drawable.mc_normal, 0));
+        dialogues.add(new Dialog(null, getString(R.string.w2), 0, 1));
+        dialogues.add(new Dialog(null, getString(R.string.w3), 0, R.drawable.pued_normal));
+        dialogues.add(new Dialog(null, getString(R.string.w4), 1, 0));
+        dialogues.add(new Dialog(null, getString(R.string.w5), R.drawable.mc_cry, 0));
 
-        // ตั้งค่า margin top 10dp
-        ViewGroup.LayoutParams params = detailTextView.getLayoutParams(); // แก้เป็น ViewGroup.LayoutParams
-        if (params instanceof ViewGroup.MarginLayoutParams) {  // ตรวจสอบว่า params เป็น MarginLayoutParams หรือไม่
-            ViewGroup.MarginLayoutParams marginParams = (ViewGroup.MarginLayoutParams) params;
-            marginParams.topMargin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 10, getResources().getDisplayMetrics());
-            detailTextView.setLayoutParams(marginParams);  // ตั้งค่ากลับ
-        }
+        //scene2
+        dialogues.add(new Dialog(getString(R.string.s3), getString(R.string.s3_d), 0, 0));
+        dialogues.add(new Dialog(null, getString(R.string.w6), R.drawable.guard_normal, 0));
+        dialogues.add(new Dialog(null, getString(R.string.w7), 1, R.drawable.tae_normal2));
+        dialogues.add(new Dialog(null, getString(R.string.w8), R.drawable.guard_smile, 0));
+        dialogues.add(new Dialog(null, getString(R.string.w8_a1), R.drawable.guard_normal, 0));
+        dialogues.add(new Dialog(null, getString(R.string.w9), R.drawable.mc_scared, 0));
+        dialogues.add(new Dialog(null, getString(R.string.w10), 0, R.drawable.tae_angry));
+        dialogues.add(new Dialog(null, getString(R.string.w11), 0, R.drawable.pued_scared));
+        dialogues.add(new Dialog(null, getString(R.string.w12), R.drawable.mc_cry, 0));
+
+        //scene3
+        dialogues.add(new Dialog(getString(R.string.c1_s4), getString(R.string.c1_w1), 0, R.drawable.tae_angry));
+        dialogues.add(new Dialog(null, getString(R.string.c1_w2), 1, 0));
+        dialogues.add(new Dialog(null, getString(R.string.c1_w3), 0, R.drawable.pued_run));
+        dialogues.add(new Dialog(null, getString(R.string.c1_w4), 0, R.drawable.tae_surprised));
+        dialogues.add(new Dialog(null, getString(R.string.c1_w5), R.drawable.mc_surprised, 0));
+
+        //scene4
+        dialogues.add(new Dialog(getString(R.string.c1_s5), getString(R.string.c1_w5_a1), 0, R.drawable.tae_angry));
+
+        //scene5
+        dialogues.add(new Dialog(getString(R.string.c1_s6), getString(R.string.c1_w7), 0, 1));
+        dialogues.add(new Dialog(getString(R.string.c1_s6), getString(R.string.c1_w7), getString(R.string.c1_w8), getString(R.string.c1_w9), "", "gameOver", 0, 0)); // ไปห้องน้ำหรือประตูหลัง
+
+        //scene5 (choose option 1)
+        dialogues.add(new Dialog(null, getString(R.string.c1_w10), R.drawable.mc_normal, 0));
+        dialogues.add(new Dialog(null, getString(R.string.c1_w11), 0, R.drawable.tae_surprised));
+        dialogues.add(new Dialog(null, getString(R.string.c1_w12), R.drawable.mc_surprised, 0));
+        dialogues.add(new Dialog(null, getString(R.string.c1_w13), 0, R.drawable.pued_scared));
+
+        //scene6
+        dialogues.add(new Dialog(getString(R.string.c1_s7), getString(R.string.c1_w14), getString(R.string.c1_w15), getString(R.string.c1_w16), "toiletSearch", "noToiletSearch", 0, R.drawable.tae_smile));
+
 
         changeTextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 textView.setVisibility(View.GONE);
-                isOptionSelected = true;
-                // ตั้งค่าข้อความใหม่จาก messages array โดยใช้ currentIndex
-                detailTextView.setText(word[Index]);
-                Index++;
-                if (detailTextView.getText().toString().equals(word[6])) {
-                    textView.setVisibility(View.VISIBLE);
-                    textView.setText(s3);
-                } else if (detailTextView.getText().toString().equals(word[14])) {
-                    textView.setVisibility(View.VISIBLE);
-                    textView.setText(c1_s4);
-                } else if (detailTextView.getText().toString().equals(word[19])) {
-                    textView.setVisibility(View.VISIBLE);
-                    textView.setText(c1_s5);
-                } else if (detailTextView.getText().toString().equals(word[20])) { //ไปห้องน้ำหรือประตูหลัง
-                    textView.setVisibility(View.VISIBLE);
-                    textView.setText(c1_s6);
-                    detailTextView.setText(c1_w7);
-                    optionButton.setVisibility(View.VISIBLE);
-                    opt1.setText(c1_w8);
-                    opt2.setText(c1_w9);
 
-                    opt1.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            isOptionSelected = true;
-                            optionButton.setVisibility(View.GONE);
-                            textView.setVisibility(View.GONE);
-                            detailTextView.setText(word[Index]);
-                        }
-                    });
+                Dialog dialogue = null;
 
-                    opt2.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            isOptionSelected = true;
-                            textView.setVisibility(View.GONE);
-                            optionButton.setVisibility(View.GONE);
-                            detailTextView.setText(c1_w9_1);
-                        }
-                    });
-                } else if (detailTextView.getText().toString().equals(word[25])) { //สำรวจหรือไม่สำรวจห้องน้ำ
-                    textView.setVisibility(View.VISIBLE);
-                    textView.setText(c1_s7);
-                    optionButton.setVisibility(View.VISIBLE);
-                    opt1.setText(c1_w14);
-                    opt2.setText(c1_w15);
+                if (Index >= 0 && Index < dialogues.size()) {
+                    dialogue = dialogues.get(Index);
+                } else {
+                    // Navigate to the next dialog page if index is out of bounds
+                    Intent intent = new Intent(Dialogpage.this, dialog_page2.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                    startActivity(intent);
+                    return; // Exit to prevent further code execution
+                }
 
-                    opt1.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            isOptionSelected = true;
-                            optionButton.setVisibility(View.GONE);
-                            textView.setVisibility(View.GONE);
-                            detailTextView.setText(word[Index]);
-                        }
-                    });
-
-                    opt2.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            isOptionSelected = true;
-                            textView.setVisibility(View.GONE);
-                            optionButton.setVisibility(View.GONE);
-                            Intent intent = new Intent(Dialogpage.this, Dialogpage_NosearchToilet.class);
-                            startActivity(intent);
-                        }
-                    });
-                } else if (detailTextView.getText().toString().equals(word[30])) {
-                    textView.setVisibility(View.VISIBLE);
-                    textView.setText(c1_s9);
-                } else if (detailTextView.getText().toString().equals(word[31])) {
-                    textView.setVisibility(View.VISIBLE);
-                    textView.setText(c2_s11);
-                } else if (detailTextView.getText().toString().equals(word[34])) {
-                    textView.setVisibility(View.VISIBLE);
-                    textView.setText(c2_s12);
-                } else if (detailTextView.getText().toString().equals(word[37])) {
-                    textView.setVisibility(View.VISIBLE);
-                    textView.setText(c2_s13);
-                } else if (detailTextView.getText().toString().equals(word[39])) {
-                    textView.setVisibility(View.VISIBLE);
-                    textView.setText(c2_s14);
-                } else if (detailTextView.getText().toString().equals(word[40])) { //ตู้เต่าบินหรือหลับหลังเพื่อน
-                    optionButton.setVisibility(View.VISIBLE);
-                    opt1.setText(c2_w9_a);
-                    opt2.setText(c2_w9);
-
-                    opt2.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            isOptionSelected = true;
-                            optionButton.setVisibility(View.GONE);
-                            textView.setVisibility(View.GONE);
-                            detailTextView.setText(word[Index]);
-                        }
-                    });
-
-                    opt1.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            isOptionSelected = true;
-                            textView.setVisibility(View.GONE);
-                            optionButton.setVisibility(View.GONE);
-                            detailTextView.setText("Game Over");
-                        }
-                    });
-                } else if (detailTextView.getText().toString().equals(word[41])) { //เต้หรือปื๊ด
-                    optionButton.setVisibility(View.VISIBLE);
-                    opt1.setText(c2_w11); //เต้
-                    opt2.setText(c2_w10);//ปื้ด
-
-                    opt2.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            isOptionSelected = true;
-                            optionButton.setVisibility(View.GONE);
-                            textView.setVisibility(View.GONE);
-                            detailTextView.setText(word[Index]);
-                        }
-                    });
-
-                    opt1.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            isOptionSelected = true;
-                            textView.setVisibility(View.GONE);
-                            optionButton.setVisibility(View.GONE);
-                            Intent intent = new Intent(Dialogpage.this, Dialogpage_RootB.class);
-                            startActivity(intent);  // Start the activity
-                        }
-                    });
-                } else if (detailTextView.getText().toString().equals(word[47])) { //ใช้ไอเทอมหรือไม่ใช้
-                    optionButton.setVisibility(View.VISIBLE);
-                    opt1.setText(c2_w10_7);
-                    opt2.setText(c2_w10_8);
-
-                    opt1.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            isOptionSelected = true;
-                            optionButton.setVisibility(View.GONE);
-                            textView.setVisibility(View.GONE);
-                            detailTextView.setText(word[Index]);
-                        }
-                    });
-
-                    opt2.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            isOptionSelected = true;
-                            textView.setVisibility(View.GONE);
-                            optionButton.setVisibility(View.GONE);
-                            detailTextView.setText(c2_w10_7_a);
-                        }
-                    });
-                } else if (detailTextView.getText().toString().equals(word[50])) {
-                    textView.setVisibility(View.VISIBLE);
-                    textView.setText(c3_s16);
-                } else if (detailTextView.getText().toString().equals(word[54])) {
-                    textView.setVisibility(View.VISIBLE);
-                    textView.setText(c3_s17);
-                } else if (detailTextView.getText().toString().equals(word[57])) {
-                    textView.setVisibility(View.VISIBLE);
-                    textView.setText(c3_s18);
-                } else if (detailTextView.getText().toString().equals(word[60])) {
-                    textView.setVisibility(View.VISIBLE);
-                    textView.setText(c3_s19);
-                } else if (detailTextView.getText().toString().equals(word[65])) {
-                    optionButton.setVisibility(View.VISIBLE);
-                    opt1.setText(c3_w17);//เสียตัว
-                    opt2.setText(c3_w16);//ไม่เสียตัว
-
-                    opt1.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            isOptionSelected = true;
-                            optionButton.setVisibility(View.GONE);
-                            textView.setVisibility(View.GONE);
-                            detailTextView.setText(word[Index]);
-                        }
-                    });
-
-                    opt2.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            isOptionSelected = true;
-                            textView.setVisibility(View.GONE);
-                            optionButton.setVisibility(View.GONE);
-                            Intent intent = new Intent(Dialogpage.this, Dialogpage_RootA1_bad.class);
-                            startActivity(intent);  // Start the activity
-                        }
-                    });
+                // Check if the dialogue exists and update the UI
+                if (dialogue != null) {
+                    // If both options are null, move to the next dialogue automatically
+                    if (dialogue.option1Action == null && dialogue.option2Action == null) {
+                        Index++;
+                    }
+                    updateDialogue(
+                            dialogue.getText(),
+                            dialogue.getDetail(),
+                            dialogue.getOption1(),
+                            dialogue.getOption2(),
+                            dialogue.getOption1Action(),
+                            dialogue.getOption2Action(),
+                            dialogue.getImageLeft(),
+                            dialogue.getImageRight()
+                    );
+                } else {
+                    // Handle the case where no dialogue exists
+                    updateDialogue("End of dialogue", null, null, null, null, null, 0, 0);
                 }
             }
+
         });
     }
+
+    private void updateDialogue(String text, String details, String option1Text, String option2Text, String option1Action, String option2Action, int charImage1Path, int charImage2Path) {
+        // Views
+        TextView textView = findViewById(R.id.text);
+        TextView detailTextView = findViewById(R.id.detail);
+        Button changeTextButton = findViewById(R.id.changeTextButton);
+        LinearLayout optionButton = findViewById(R.id.dialogOptions);
+        ImageButton opt1 = findViewById(R.id.option1);
+        ImageButton opt2 = findViewById(R.id.option2);
+        TextView opt1Text = findViewById(R.id.option1Text);
+        TextView opt2Text = findViewById(R.id.option2Text);
+        View blackScreen = findViewById(R.id.blackScreen);
+        ImageView charImageView1 = findViewById(R.id.characterImage1);
+        ImageView charImageView2 = findViewById(R.id.characterImage2);
+
+        // Animations
+        Animation moveToSide = AnimationUtils.loadAnimation(this, R.anim.move_to_left);
+        Animation moveBack = AnimationUtils.loadAnimation(this, R.anim.move_back_left);
+        Animation moveToRight = AnimationUtils.loadAnimation(this, R.anim.move_to_right);
+        Animation moveBackRight = AnimationUtils.loadAnimation(this, R.anim.move_back_right);
+        Animation optionBounce = AnimationUtils.loadAnimation(this, R.anim.bounce);
+
+        ColorFilter filter_dark = new PorterDuffColorFilter(0x77000000, PorterDuff.Mode.SRC_ATOP);
+
+        // Helper method to handle image transitions and animations
+        updateCharacterImage(charImage1Path, charImageView1, charImageView2, moveToSide, moveBack, filter_dark);
+        updateCharacterImage(charImage2Path, charImageView2, charImageView1, moveToRight, moveBackRight, filter_dark);
+
+        // Handle text visibility and update
+        textView.setVisibility(text == null ? View.GONE : View.VISIBLE);
+        if (text != null) textView.setText(text);
+        //detailTextView.setText(details);
+        startTypingAnimation(detailTextView, details, 1);
+
+        handleOptions(option1Text, option2Text, optionButton, changeTextButton, opt1, opt2, opt1Text, opt2Text, optionBounce);
+
+        opt1.setOnClickListener(v -> handleOptionClick(option1Action, optionButton, textView, detailTextView, changeTextButton, blackScreen));
+        opt2.setOnClickListener(v -> handleOptionClick(option2Action, optionButton, textView, detailTextView, changeTextButton, blackScreen));
+    }
+
+    private void updateCharacterImage(int imagePath, ImageView imageView, ImageView otherImageView, Animation moveTo, Animation moveBack, ColorFilter filter) {
+        if (imagePath == 1) {
+            imageView.clearColorFilter();
+        } else if (imagePath == 0) {
+            imageView.setColorFilter(filter);
+        } else {
+            imageView.startAnimation(moveTo);
+            otherImageView.setColorFilter(filter);
+
+            moveTo.setAnimationListener(new Animation.AnimationListener() {
+                @Override
+                public void onAnimationStart(Animation animation) {
+                }
+
+                @Override
+                public void onAnimationEnd(Animation animation) {
+                    imageView.setImageResource(imagePath);
+                    imageView.clearColorFilter();
+                    imageView.startAnimation(moveBack);
+                }
+
+                @Override
+                public void onAnimationRepeat(Animation animation) {
+                }
+            });
+        }
+    }
+
+    private void handleOptions(String option1Text, String option2Text, LinearLayout optionButton, Button changeTextButton, ImageButton opt1, ImageButton opt2, TextView opt1Text, TextView opt2Text, Animation optionBounce) {
+        View blackScreen = findViewById(R.id.blackScreen);
+        if (option1Text == null && option2Text == null) {
+            optionButton.setVisibility(View.GONE);
+            changeTextButton.setVisibility(View.VISIBLE);
+        } else {
+            optionButton.setVisibility(View.VISIBLE);
+            changeTextButton.setVisibility(View.GONE);
+            blackScreen.setVisibility(View.VISIBLE);
+
+            if (option1Text != null) {
+                opt1Text.setText(option1Text);
+                opt1.setVisibility(View.VISIBLE);
+                opt1.startAnimation(optionBounce);
+            } else {
+                opt1.setVisibility(View.GONE);
+            }
+
+            if (option2Text != null) {
+                opt2Text.setText(option2Text);
+                opt2.setVisibility(View.VISIBLE);
+                opt2.startAnimation(optionBounce);
+            } else {
+                opt2.setVisibility(View.GONE);
+            }
+        }
+    }
+
+    private void handleOptionClick(String optionAction, LinearLayout optionButton, TextView textView, TextView detailTextView, Button changeTextButton, View blackScreen) {
+        optionButton.setVisibility(View.GONE);
+        changeTextButton.setVisibility(View.VISIBLE);
+        blackScreen.setVisibility(View.GONE);
+        handleOptionAction(optionAction);
+    }
+
+
+    private void handleOptionAction(String action) {
+        switch (action) {
+            case "gameOver":
+                Intent gameOverIntent = new Intent(Dialogpage.this, GameOverPage.class);
+                gameOverIntent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivity(gameOverIntent);
+                break;
+            case "toiletSearch":
+                //continue scene6
+                dialogues.add(new Dialog(null, getString(R.string.c1_w15_1), R.drawable.mc_cum, 0));
+                dialogues.add(new Dialog(null, getString(R.string.c1_w15_2), 0, R.drawable.tae_surprised));
+                dialogues.add(new Dialog(null, getString(R.string.c1_w15_3), 0, R.drawable.pued_scared));
+                dialogues.add(new Dialog(null, getString(R.string.c1_w15_4), R.drawable.mc_surprised, 0));
+                //scene9
+                dialogues.add(new Dialog(getString(R.string.c1_s9), getString(R.string.c1_s9_d), 0, 0));
+                Index++;
+                break;
+            case "noToiletSearch":
+                //continue scene6
+                dialogues.add(new Dialog(null, getString(R.string.c1_w16_1), 0, R.drawable.tae_surprised));
+                dialogues.add(new Dialog(null, getString(R.string.c1_w16_2), 0, R.drawable.pued_scared2));
+                dialogues.add(new Dialog(null, getString(R.string.c1_w16_3) , R.drawable.mc_normal, 0));
+                dialogues.add(new Dialog(null, getString(R.string.c1_w16_3), getString(R.string.c1_w16_2a), getString(R.string.c1_w16_2b), "gameOver", "", 0, 0));
+                //scene9
+                dialogues.add(new Dialog(getString(R.string.c1_s10), getString(R.string.c1_w17), R.drawable.mc_scared, 0));
+                Index++;
+                break;
+            default:
+                Index++;
+                break;
+        }
+    }
+
+    private void startTypingAnimation(TextView textView, String fullText, int typingDelay) {
+        Handler handler = new Handler();
+        int[] index = {0};
+        Runnable typingRunnable = new Runnable() {
+            @Override
+            public void run() {
+                if (index[0] < fullText.length()) {
+                    textView.setText(fullText.substring(0, index[0] + 1));
+                    index[0]++;
+                    handler.postDelayed(this, typingDelay);
+                }
+            }
+        };
+        handler.post(typingRunnable);
+    }
+
 }
