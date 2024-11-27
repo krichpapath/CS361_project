@@ -47,7 +47,6 @@ public class dialog_page4 extends AppCompatActivity {
         ImageView charImageView2 = findViewById(R.id.characterImage2);
         ImageView backgroundView = findViewById(R.id.background);
 
-        textView.setText(getString(R.string.s1));
         detailTextView.setText(getString(R.string.s1_d));
         charImageView1.setImageResource(R.drawable.empty);
         charImageView2.setImageResource(R.drawable.empty);

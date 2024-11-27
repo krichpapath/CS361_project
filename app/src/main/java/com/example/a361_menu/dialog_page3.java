@@ -47,7 +47,6 @@ public class dialog_page3 extends AppCompatActivity {
         ImageView charImageView2 = findViewById(R.id.characterImage2);
         ImageView backgroundView = findViewById(R.id.background);
 
-        textView.setText(getString(R.string.s1));
         detailTextView.setText(getString(R.string.s1_d));
         charImageView1.setImageResource(R.drawable.empty);
         charImageView2.setImageResource(R.drawable.empty);
@@ -67,19 +66,16 @@ public class dialog_page3 extends AppCompatActivity {
         dialogues.add(new Dialog(null, getString(R.string.c2_end_ricardo), 0, R.drawable.empty));
 
         // Scene 16: Searching for the Guard
-        dialogues.add(new Dialog(getString(R.string.c3_scene_16_title), getString(R.string.c3_scene_16_desc), 0, 0));
         dialogues.add(new Dialog(null, getString(R.string.c3_mc_dialog_key), R.drawable.mc_normal, 0));
         dialogues.add(new Dialog(null, getString(R.string.c3_tae_dialog_exit), 0, R.drawable.tae_smile));
         dialogues.add(new Dialog(null, getString(R.string.c3_tae_suggestion_search), 0, R.drawable.tae_normal2));
 
 // Scene 18: The Truth Revealed
-        dialogues.add(new Dialog(getString(R.string.c3_scene_18_title), getString(R.string.c3_scene_18_desc), 0, 0));
         dialogues.add(new Dialog(null, getString(R.string.c3_tae_dialog_reveal), 0, R.drawable.tae_angry));
         dialogues.add(new Dialog(null, getString(R.string.c3_mc_dialog_shock), R.drawable.mc_surprised, 0));
         dialogues.add(new Dialog(null, getString(R.string.c3_tae_dialog_twist), 0, R.drawable.tae_angry2));
 
 // Scene 19: Tae’s Sinister Smile
-        dialogues.add(new Dialog(getString(R.string.c3_scene_19_title), getString(R.string.c3_tae_confession), 0, R.drawable.tae_cum2));
         dialogues.add(new Dialog(null, getString(R.string.c3_mc_dialog_confused), R.drawable.mc_scared, 0));
         dialogues.add(new Dialog(null, getString(R.string.c3_tae_obsession), 0, R.drawable.tae_cum));
         dialogues.add(new Dialog(null, getString(R.string.c3_mc_realization), R.drawable.mc_scared2, 0));

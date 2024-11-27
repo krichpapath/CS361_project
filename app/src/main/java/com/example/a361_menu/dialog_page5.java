@@ -54,13 +54,12 @@ public class dialog_page5 extends AppCompatActivity {
         optionButton.setVisibility(View.GONE);
 
         // Scene 2: ตามหาพี่ยาม
-        dialogues.add(new Dialog(getString(R.string.b1_scene_2_title), getString(R.string.b1_scene_2_desc), 0, 0));
+
         dialogues.add(new Dialog(null, getString(R.string.b1_mc_dialog_key), R.drawable.mc_scared, 0));
         dialogues.add(new Dialog(null, getString(R.string.b1_pued_dialog_1), 0, R.drawable.pued_normal));
         dialogues.add(new Dialog(null, getString(R.string.b1_pued_suggestion_search), 0, R.drawable.pued_excited));
 
 // Scene 3: หลังหลบหนีสำเร็จ
-        dialogues.add(new Dialog(getString(R.string.b1_scene_3_title), getString(R.string.b1_mc_dialog_2), R.drawable.mc_surprised, 0));
         dialogues.add(new Dialog(null, getString(R.string.b1_guard_dialog_1), 0, R.drawable.guard_normal));
         dialogues.add(new Dialog(null, getString(R.string.b1_mc_dialog_3), R.drawable.mc_scared, 0));
         dialogues.add(new Dialog(null, getString(R.string.b1_pued_reaction_2), 0, R.drawable.pued_scared));

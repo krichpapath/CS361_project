@@ -47,7 +47,6 @@ public class dialog_page2 extends AppCompatActivity {
             ImageView charImageView2 = findViewById(R.id.characterImage2);
             ImageView backgroundView = findViewById(R.id.background);
 
-            textView.setText(getString(R.string.c2_scene_11_title));
             detailTextView.setText(getString(R.string.c2_pued_dialog_1));
             charImageView1.setImageResource(R.drawable.empty);
             charImageView2.setImageResource(R.drawable.pued_tpose);
@@ -62,14 +61,14 @@ public class dialog_page2 extends AppCompatActivity {
             dialogues.add(new Dialog(null, getString(R.string.c2_pued_dialog_2), 0, R.drawable.pued_scared));
 
             //scene13
-            dialogues.add(new Dialog(getString(R.string.c2_scene_13_title), getString(R.string.c2_scene_13_desc), 0, R.drawable.ricardo_normal));
+            dialogues.add(new Dialog(getString(R.string.c2_scene_13_desc), getString(R.string.c2_scene_13_desc), 0, R.drawable.ricardo_normal));
             dialogues.add(new Dialog(null, getString(R.string.c2_ricardo_dialog_1), 0, 1));
             dialogues.add(new Dialog(null, getString(R.string.c2_tae_dialog_3), 0, R.drawable.tae_fear));
 
             //scene14
-            dialogues.add(new Dialog(getString(R.string.c2_scene_14_title), getString(R.string.c2_scene_14_desc), 0, R.drawable.ricardo_flex));
-            dialogues.add(new Dialog(getString(R.string.c2_scene_14_title), getString(R.string.c2_scene_14_desc1), 0, R.drawable.ricardo_flex));
-            dialogues.add(new Dialog(getString(R.string.c2_scene_14_title), getString(R.string.c2_scene_14_desc), getString(R.string.c2_hide_pued), getString(R.string.c2_hide_tae), "hindBehindPued", "hindBehindTae", R.drawable.pued_run, R.drawable.tae_smile));
+            dialogues.add(new Dialog(getString(R.string.c2_scene_14_desc), getString(R.string.c2_scene_14_desc), 0, R.drawable.ricardo_flex));
+            dialogues.add(new Dialog(getString(R.string.c2_scene_14_desc), getString(R.string.c2_scene_14_desc1), 0, R.drawable.ricardo_flex));
+            dialogues.add(new Dialog(getString(R.string.c2_scene_14_desc), getString(R.string.c2_scene_14_desc1), getString(R.string.c2_hide_pued), getString(R.string.c2_hide_tae), "hindBehindPued", "hindBehindTae", R.drawable.pued_run, R.drawable.tae_smile));
 
             changeTextButton.setOnClickListener(new View.OnClickListener() {
                 @Override

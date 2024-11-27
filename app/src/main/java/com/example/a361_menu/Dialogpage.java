@@ -47,7 +47,7 @@ public class Dialogpage extends AppCompatActivity {
         ImageView charImageView2 = findViewById(R.id.characterImage2);
         ImageView backgroundView = findViewById(R.id.background);
 
-        textView.setText(getString(R.string.s1_d));
+        textView.setText(null);
         detailTextView.setText(getString(R.string.s1_d));
         charImageView1.setImageResource(R.drawable.empty);
         charImageView2.setImageResource(R.drawable.empty);
@@ -63,7 +63,7 @@ public class Dialogpage extends AppCompatActivity {
         dialogues.add(new Dialog(null, getString(R.string.w5), R.drawable.mc_cry, 0));
 
         //scene2
-        dialogues.add(new Dialog(getString(R.string.s3_d), getString(R.string.s3_d), 0, 0));
+        dialogues.add(new Dialog(null, getString(R.string.s3_d), 0, 0));
         dialogues.add(new Dialog(null, getString(R.string.w6), R.drawable.guard_normal, 0));
         dialogues.add(new Dialog(null, getString(R.string.w7), 1, R.drawable.tae_normal2));
         dialogues.add(new Dialog(null, getString(R.string.w8), R.drawable.guard_smile, 0));
@@ -74,18 +74,17 @@ public class Dialogpage extends AppCompatActivity {
         dialogues.add(new Dialog(null, getString(R.string.w12), R.drawable.mc_cry, 0));
 
         //scene3
-        dialogues.add(new Dialog(getString(R.string.c1_s4), getString(R.string.c1_w1), 0, R.drawable.tae_angry));
+        dialogues.add(new Dialog(null, getString(R.string.c1_w1), 0, R.drawable.tae_angry));
         dialogues.add(new Dialog(null, getString(R.string.c1_w2), 1, 0));
         dialogues.add(new Dialog(null, getString(R.string.c1_w3), 0, R.drawable.pued_run));
         dialogues.add(new Dialog(null, getString(R.string.c1_w4), 0, R.drawable.tae_surprised));
         dialogues.add(new Dialog(null, getString(R.string.c1_w5), R.drawable.mc_surprised, 0));
-
-        //scene4
-        dialogues.add(new Dialog(getString(R.string.c1_s5), getString(R.string.c1_w5_a1), 0, R.drawable.tae_angry));
+        dialogues.add(new Dialog(null, getString(R.string.c1_w5_a1),R.drawable.mc_normal, 0));
 
         //scene5
-        dialogues.add(new Dialog(getString(R.string.c1_s6), getString(R.string.c1_w7), 0, 1));
-        dialogues.add(new Dialog(getString(R.string.c1_s6), getString(R.string.c1_w7), getString(R.string.c1_w8), getString(R.string.c1_w9), "", "gameOver", 0, 0)); // ไปห้องน้ำหรือประตูหลัง
+        dialogues.add(new Dialog(null, getString(R.string.c1_s6), 0, 0));
+        dialogues.add(new Dialog(null, getString(R.string.c1_w7), 0, 1));
+        dialogues.add(new Dialog(null, getString(R.string.c1_w7), getString(R.string.c1_w8), getString(R.string.c1_w9), "", "gameOver", 0, 0)); // ไปห้องน้ำหรือประตูหลัง
 
         //scene5 (choose option 1)
         dialogues.add(new Dialog(null, getString(R.string.c1_w10), R.drawable.mc_normal, 0));
@@ -94,7 +93,8 @@ public class Dialogpage extends AppCompatActivity {
         dialogues.add(new Dialog(null, getString(R.string.c1_w13), 0, R.drawable.pued_scared));
 
         //scene6
-        dialogues.add(new Dialog(getString(R.string.c1_s7), getString(R.string.c1_w14), getString(R.string.c1_w15), getString(R.string.c1_w16), "toiletSearch", "noToiletSearch", 0, R.drawable.tae_smile));
+        dialogues.add(new Dialog(null, getString(R.string.c1_w14),0, R.drawable.tae_surprised));
+        dialogues.add(new Dialog(null, getString(R.string.c1_w14), getString(R.string.c1_w15), getString(R.string.c1_w16), "toiletSearch", "noToiletSearch", 0, R.drawable.tae_smile));
 
 
         changeTextButton.setOnClickListener(new View.OnClickListener() {
@@ -256,7 +256,7 @@ public class Dialogpage extends AppCompatActivity {
                 dialogues.add(new Dialog(null, getString(R.string.c1_w15_3), 0, R.drawable.pued_scared));
                 dialogues.add(new Dialog(null, getString(R.string.c1_w15_4), R.drawable.mc_surprised, 0));
                 //scene9
-                dialogues.add(new Dialog(getString(R.string.c1_s9), getString(R.string.c1_s9_d), 0, 0));
+                dialogues.add(new Dialog(getString(R.string.c1_s9_d), getString(R.string.c1_s9_d), 0, 0));
                 Index++;
                 break;
             case "noToiletSearch":
@@ -266,7 +266,7 @@ public class Dialogpage extends AppCompatActivity {
                 dialogues.add(new Dialog(null, getString(R.string.c1_w16_3) , R.drawable.mc_normal, 0));
                 dialogues.add(new Dialog(null, getString(R.string.c1_w16_3), getString(R.string.c1_w16_2a), getString(R.string.c1_w16_2b), "gameOver", "", 0, 0));
                 //scene9
-                dialogues.add(new Dialog(getString(R.string.c1_s10), getString(R.string.c1_w17), R.drawable.mc_scared, 0));
+                dialogues.add(new Dialog(getString(R.string.c1_w17), getString(R.string.c1_w17), R.drawable.mc_scared, 0));
                 Index++;
                 break;
             default:
