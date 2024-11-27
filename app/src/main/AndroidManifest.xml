@@ -13,17 +13,23 @@
         android:theme="@style/Theme._361_menu"
         tools:targetApi="31">
         <activity
+            android:name=".MinigameTap"
+            android:exported="false" />
+        <activity
+            android:name=".Minigame_Taptap"
+            android:exported="false" />
+        <activity
             android:name=".dialog_page5"
             android:exported="false"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".dialog_page4"
             android:exported="false"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".dialog_page3"
             android:exported="false"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".dialog_page2"
             android:exported="false"

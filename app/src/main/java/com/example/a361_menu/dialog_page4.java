@@ -63,7 +63,8 @@ public class dialog_page4 extends AppCompatActivity {
         dialogues.add(new Dialog(null, getString(R.string.b1_mc_thoughts_1), getString(R.string.c2_use_item_choice), getString(R.string.c2_no_item_choice), "", "gameOver", 1, 0));
         dialogues.add(new Dialog(null, getString(R.string.b1_mc_transform_hk), R.drawable.mc_cum, 0));
         dialogues.add(new Dialog(null, getString(R.string.b1_brother_to_reaction_hk), 0, R.drawable.ricardo_surprised));
-        //minigame
+        //minigame //dialogues.add(ไปไงต่อเว้)
+
 
         changeTextButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -218,6 +219,12 @@ public class dialog_page4 extends AppCompatActivity {
                 dialogues.add(new Dialog(null, getString(R.string.c3_resist_dialog_2), 0, R.drawable.tae_cum));
                 dialogues.add(new Dialog(null, getString(R.string.c3_resist_dialog_3), R.drawable.mc_cum, 0));
                 dialogues.add(new Dialog(null, getString(R.string.c3_resist_end), R.drawable.empty, R.drawable.empty));
+                Index++;
+                break;
+            case "startMinigame":
+                Intent minigameIntent = new Intent(this, MinigameTap.class);
+                minigameIntent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivity(minigameIntent); // Intent to start the minigame
                 Index++;
                 break;
             default:
