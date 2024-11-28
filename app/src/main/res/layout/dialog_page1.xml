@@ -11,8 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:contentDescription=""
-        android:scaleType="centerCrop"
-        android:src="@drawable/bg_2" />
+        android:scaleType="fitXY"
+        android:src="@drawable/bg_1" />
 
 
     <LinearLayout
@@ -149,10 +149,10 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="@font/thaisanslite_r1"
+                android:textSize="28sp"
                 android:gravity="center"
                 android:text="Option 1"
                 android:textColor="#FFFFFF"
-                android:textSize="28sp"
                 android:textStyle="bold" />
         </FrameLayout>
 
@@ -207,5 +207,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.95" />
+
+    <View
+        android:id="@+id/black_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000"
+        android:visibility="gone"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

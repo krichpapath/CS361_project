@@ -178,5 +178,8 @@
     <string name="b1_guard_reveal">Guard: "Oh, by the way, I’m not actually a guard. I’m just a gay dude in a cosplay uniform. The real guards around here? Already knocked ‘em out and sent them packing. *laughs maniacally*"</string>
     <string name="b1_mc_final_reaction">Nong Time: "Oh great… it’s happening again, huh?"</string>
     <string name="b1_ending">And so, after that day, no one ever saw those college boys in Building B5 again...</string>
+    <string name="bt_backToMenu">Back To Menu</string>
+    <string name="c1_w15_end_2">Died because the cat saw you ignoring it, so it looked at you with its clear claws behind you</string>
+    <string name="exit_app">Exiting The App</string>
 
 </resources>

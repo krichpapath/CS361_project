@@ -1,5 +1,7 @@
 package com.example.a361_menu;
 
+import android.animation.Animator;
+import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.ColorFilter;
@@ -26,12 +28,20 @@ public class dialog_page2 extends AppCompatActivity {
 
         private int Index = 0;
         List<Dialog> dialogues = new ArrayList<>();
+        String message;
+
+        @Override
+        public void onBackPressed() {
+            super.onBackPressed();
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.dialog_page1);
-            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE);
             this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
             TextView detailTextView = findViewById(R.id.detail);
@@ -47,18 +57,19 @@ public class dialog_page2 extends AppCompatActivity {
             ImageView charImageView2 = findViewById(R.id.characterImage2);
             ImageView backgroundView = findViewById(R.id.background);
 
-            detailTextView.setText(getString(R.string.c2_pued_dialog_1));
-            charImageView1.setImageResource(R.drawable.empty);
-            charImageView2.setImageResource(R.drawable.pued_tpose);
+            textView.setVisibility(View.GONE);
+            detailTextView.setText(getString(R.string.c2_mc_dialog_1));
+            charImageView1.setImageResource(R.drawable.mc_scared);
+            charImageView2.setImageResource(R.drawable.empty);
+            backgroundView.setImageResource(R.drawable.bg_4);
             optionButton.setVisibility(View.GONE);
 
-            dialogues.add(new Dialog(null, getString(R.string.c2_mc_dialog_1), R.drawable.mc_scared, 0));
             dialogues.add(new Dialog(null, getString(R.string.c2_tae_dialog_1), 0, R.drawable.tae_smile));
 
             //scene12
             dialogues.add(new Dialog(getString(R.string.c2_scene_12_title), getString(R.string.c2_tae_dialog_2), 0, R.drawable.pued_tpose));
             dialogues.add(new Dialog(null, getString(R.string.c2_mc_dialog_2), R.drawable.mc_scared, 0));
-            dialogues.add(new Dialog(null, getString(R.string.c2_pued_dialog_2), 0, R.drawable.pued_scared));
+            dialogues.add(new Dialog(null, getString(R.string.c2_pued_dialog_2), 0, R.drawable.pued_scared,R.drawable.bg_5));
 
             //scene13
             dialogues.add(new Dialog(getString(R.string.c2_scene_13_desc), getString(R.string.c2_scene_13_desc), 0, R.drawable.ricardo_normal));
@@ -66,9 +77,9 @@ public class dialog_page2 extends AppCompatActivity {
             dialogues.add(new Dialog(null, getString(R.string.c2_tae_dialog_3), 0, R.drawable.tae_fear));
 
             //scene14
-            dialogues.add(new Dialog(getString(R.string.c2_scene_14_desc), getString(R.string.c2_scene_14_desc), 0, R.drawable.ricardo_flex));
-            dialogues.add(new Dialog(getString(R.string.c2_scene_14_desc), getString(R.string.c2_scene_14_desc1), 0, R.drawable.ricardo_flex));
-            dialogues.add(new Dialog(getString(R.string.c2_scene_14_desc), getString(R.string.c2_scene_14_desc1), getString(R.string.c2_hide_pued), getString(R.string.c2_hide_tae), "hindBehindPued", "hindBehindTae", R.drawable.pued_run, R.drawable.tae_smile));
+            dialogues.add(new Dialog(null, getString(R.string.c2_scene_14_desc), 0, R.drawable.ricardo_flex,R.drawable.bg_6));
+            dialogues.add(new Dialog(null,  getString(R.string.c2_scene_14_desc1), 0, R.drawable.ricardo_flex));
+            dialogues.add(new Dialog(null,  getString(R.string.c2_scene_14_desc1), getString(R.string.c2_hide_pued), getString(R.string.c2_hide_tae), "hindBehindPued", "hindBehindTae", R.drawable.pued_run, R.drawable.tae_smile));
 
             changeTextButton.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -91,54 +102,64 @@ public class dialog_page2 extends AppCompatActivity {
                                 dialogue.getOption1Action(),
                                 dialogue.getOption2Action(),
                                 dialogue.getImageLeft(),
-                                dialogue.getImageRight()
+                                dialogue.getImageRight(),
+                                dialogue.getImageBackground()
                         );
                     } else {
-                        // Handle the case where there is no more dialogue
-                        updateDialogue("End of dialogue", null, null, null, null, null,0, 0);
+                        // Handle the case where no dialogue exists
+                        updateDialogue("End of dialogue", null, null, null, null, null, 0, 0,0);
                     }
                 }
+
             });
         }
 
-        private void updateDialogue(String text, String details, String option1Text, String option2Text, String option1Action, String option2Action, int charImage1Path, int charImage2Path) {
-            // Views
-            TextView textView = findViewById(R.id.text);
-            TextView detailTextView = findViewById(R.id.detail);
-            Button changeTextButton = findViewById(R.id.changeTextButton);
-            LinearLayout optionButton = findViewById(R.id.dialogOptions);
-            ImageButton opt1 = findViewById(R.id.option1);
-            ImageButton opt2 = findViewById(R.id.option2);
-            TextView opt1Text = findViewById(R.id.option1Text);
-            TextView opt2Text = findViewById(R.id.option2Text);
-            View blackScreen = findViewById(R.id.blackScreen);
-            ImageView charImageView1 = findViewById(R.id.characterImage1);
-            ImageView charImageView2 = findViewById(R.id.characterImage2);
+    private void updateDialogue(String text, String details, String option1Text, String option2Text, String option1Action, String option2Action, int charImage1Path, int charImage2Path,int backgroundPath) {
+        // Views
+        TextView textView = findViewById(R.id.text);
+        TextView detailTextView = findViewById(R.id.detail);
+        Button changeTextButton = findViewById(R.id.changeTextButton);
+        LinearLayout optionButton = findViewById(R.id.dialogOptions);
+        ImageButton opt1 = findViewById(R.id.option1);
+        ImageButton opt2 = findViewById(R.id.option2);
+        TextView opt1Text = findViewById(R.id.option1Text);
+        TextView opt2Text = findViewById(R.id.option2Text);
+        View blackScreen = findViewById(R.id.blackScreen);
+        ImageView charImageView1 = findViewById(R.id.characterImage1);
+        ImageView charImageView2 = findViewById(R.id.characterImage2);
+        ImageView backgroundImageView = findViewById(R.id.background);
 
-            // Animations
-            Animation moveToSide = AnimationUtils.loadAnimation(this, R.anim.move_to_left);
-            Animation moveBack = AnimationUtils.loadAnimation(this, R.anim.move_back_left);
-            Animation moveToRight = AnimationUtils.loadAnimation(this, R.anim.move_to_right);
-            Animation moveBackRight = AnimationUtils.loadAnimation(this, R.anim.move_back_right);
-            Animation optionBounce = AnimationUtils.loadAnimation(this, R.anim.bounce);
+        // Animations
+        Animation moveToSide = AnimationUtils.loadAnimation(this, R.anim.move_to_left);
+        Animation moveBack = AnimationUtils.loadAnimation(this, R.anim.move_back_left);
+        Animation moveToRight = AnimationUtils.loadAnimation(this, R.anim.move_to_right);
+        Animation moveBackRight = AnimationUtils.loadAnimation(this, R.anim.move_back_right);
+        Animation optionBounce = AnimationUtils.loadAnimation(this, R.anim.bounce);
 
-            ColorFilter filter_dark = new PorterDuffColorFilter(0x77000000, PorterDuff.Mode.SRC_ATOP);
+        ColorFilter filter_dark = new PorterDuffColorFilter(0x77000000, PorterDuff.Mode.SRC_ATOP);
 
-            // Helper method to handle image transitions and animations
-            updateCharacterImage(charImage1Path, charImageView1, charImageView2, moveToSide, moveBack, filter_dark);
-            updateCharacterImage(charImage2Path, charImageView2, charImageView1, moveToRight, moveBackRight, filter_dark);
-
-            // Handle text visibility and update
-            textView.setVisibility(text == null ? View.GONE : View.VISIBLE);
-            if (text != null) textView.setText(text);
-            //detailTextView.setText(details);
-            startTypingAnimation(detailTextView, details, 1);
-
-            handleOptions(option1Text, option2Text, optionButton, changeTextButton, opt1, opt2, opt1Text, opt2Text, optionBounce);
-
-            opt1.setOnClickListener(v -> handleOptionClick(option1Action, optionButton, textView, detailTextView, changeTextButton, blackScreen));
-            opt2.setOnClickListener(v -> handleOptionClick(option2Action, optionButton, textView, detailTextView, changeTextButton, blackScreen));
+        if(backgroundPath != 0){
+            fadeToBlackBeforeBackgroundChange(backgroundImageView, backgroundPath);
         }
+        // Helper method to handle image transitions and animations
+        updateCharacterImage(charImage1Path, charImageView1, charImageView2, moveToSide, moveBack, filter_dark);
+        updateCharacterImage(charImage2Path, charImageView2, charImageView1, moveToRight, moveBackRight, filter_dark);
+
+        // Handle text visibility and update
+        textView.setVisibility(text == null ? View.GONE : View.VISIBLE);
+        if (text != null) textView.setText(text);
+        //detailTextView.setText(details);
+        startTypingAnimation(detailTextView, details, 1);
+
+        handleOptions(option1Text, option2Text, optionButton, changeTextButton, opt1, opt2, opt1Text, opt2Text, optionBounce);
+
+        opt1.setOnClickListener(v -> handleOptionClick(option1Action, optionButton, textView, detailTextView, changeTextButton, blackScreen));
+        opt2.setOnClickListener(v -> handleOptionClick(option2Action, optionButton, textView, detailTextView, changeTextButton, blackScreen));
+
+        if(backgroundPath != 0){
+            fadeToBlackBeforeBackgroundChange(backgroundImageView, backgroundPath);
+        }
+    }
 
         private void updateCharacterImage(int imagePath, ImageView imageView, ImageView otherImageView, Animation moveTo, Animation moveBack, ColorFilter filter) {
             if (imagePath == 1) {
@@ -218,7 +239,7 @@ public class dialog_page2 extends AppCompatActivity {
                     Index++;
                     break;
                 case "hindBehindTae":
-                    Intent dialog_page4Intent = new Intent(this, dialog_page3.class);
+                    Intent dialog_page4Intent = new Intent(this, dialog_page4.class);
                     dialog_page4Intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                     startActivity(dialog_page4Intent);
                     Index++;
@@ -245,4 +266,26 @@ public class dialog_page2 extends AppCompatActivity {
             handler.post(typingRunnable);
         }
 
+    private void fadeToBlackBeforeBackgroundChange(ImageView backgroundImageView, int backgroundPath) {
+        View blackOverlay = findViewById(R.id.black_overlay);
+        blackOverlay.setVisibility(View.VISIBLE);
+
+        ObjectAnimator fadeToBlack = ObjectAnimator.ofFloat(blackOverlay, "alpha", 0f, 1f);
+        fadeToBlack.setDuration(750);
+
+        ObjectAnimator fadeInOverlay = ObjectAnimator.ofFloat(blackOverlay, "alpha", 1f, 0f);
+        fadeInOverlay.setDuration(750);
+
+        fadeToBlack.addListener(new Animator.AnimatorListener() {
+            @Override public void onAnimationEnd(Animator animation) {
+                backgroundImageView.setImageResource(backgroundPath);
+                fadeInOverlay.start();
+            }
+            @Override public void onAnimationStart(Animator animation) {}
+            @Override public void onAnimationCancel(Animator animation) {}
+            @Override public void onAnimationRepeat(Animator animation) {}
+        });
+
+        fadeToBlack.start();
+    }
     }

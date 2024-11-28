@@ -1,5 +1,8 @@
 package com.example.a361_menu;
 
+import android.animation.Animator;
+import android.animation.ObjectAnimator;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.ColorFilter;
@@ -21,17 +24,37 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.List;
 import android.os.Handler;
+import android.widget.Toast;
 
 public class Dialogpage extends AppCompatActivity {
 
     private int Index = 0;
     List<Dialog> dialogues = new ArrayList<>();
+    String message;
+
+    private boolean doubleBackToExitPressedOnce = false;
+
+    @SuppressLint("MissingSuperCall")
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            // Proceed with your desired action
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+            finish();
+            return;
+        }
+
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, R.string.exit_app, Toast.LENGTH_SHORT).show();
+        new Handler().postDelayed(() -> doubleBackToExitPressedOnce = false, 2000);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dialog_page1);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         TextView detailTextView = findViewById(R.id.detail);
@@ -47,8 +70,8 @@ public class Dialogpage extends AppCompatActivity {
         ImageView charImageView2 = findViewById(R.id.characterImage2);
         ImageView backgroundView = findViewById(R.id.background);
 
-        textView.setText(null);
-        detailTextView.setText(getString(R.string.s1_d));
+        textView.setText(getString(R.string.s1_d));
+        detailTextView.setText(null);
         charImageView1.setImageResource(R.drawable.empty);
         charImageView2.setImageResource(R.drawable.empty);
         optionButton.setVisibility(View.GONE);
@@ -73,45 +96,21 @@ public class Dialogpage extends AppCompatActivity {
         dialogues.add(new Dialog(null, getString(R.string.w11), 0, R.drawable.pued_scared));
         dialogues.add(new Dialog(null, getString(R.string.w12), R.drawable.mc_cry, 0));
 
-        //scene3
-        dialogues.add(new Dialog(null, getString(R.string.c1_w1), 0, R.drawable.tae_angry));
-        dialogues.add(new Dialog(null, getString(R.string.c1_w2), 1, 0));
-        dialogues.add(new Dialog(null, getString(R.string.c1_w3), 0, R.drawable.pued_run));
-        dialogues.add(new Dialog(null, getString(R.string.c1_w4), 0, R.drawable.tae_surprised));
-        dialogues.add(new Dialog(null, getString(R.string.c1_w5), R.drawable.mc_surprised, 0));
-        dialogues.add(new Dialog(null, getString(R.string.c1_w5_a1),R.drawable.mc_normal, 0));
-
-        //scene5
-        dialogues.add(new Dialog(null, getString(R.string.c1_s6), 0, 0));
-        dialogues.add(new Dialog(null, getString(R.string.c1_w7), 0, 1));
-        dialogues.add(new Dialog(null, getString(R.string.c1_w7), getString(R.string.c1_w8), getString(R.string.c1_w9), "", "gameOver", 0, 0)); // ไปห้องน้ำหรือประตูหลัง
-
-        //scene5 (choose option 1)
-        dialogues.add(new Dialog(null, getString(R.string.c1_w10), R.drawable.mc_normal, 0));
-        dialogues.add(new Dialog(null, getString(R.string.c1_w11), 0, R.drawable.tae_surprised));
-        dialogues.add(new Dialog(null, getString(R.string.c1_w12), R.drawable.mc_surprised, 0));
-        dialogues.add(new Dialog(null, getString(R.string.c1_w13), 0, R.drawable.pued_scared));
-
-        //scene6
-        dialogues.add(new Dialog(null, getString(R.string.c1_w14),0, R.drawable.tae_surprised));
-        dialogues.add(new Dialog(null, getString(R.string.c1_w14), getString(R.string.c1_w15), getString(R.string.c1_w16), "toiletSearch", "noToiletSearch", 0, R.drawable.tae_smile));
-
+        dialogues.add(new Dialog(null, getString(R.string.c1_w1), 0, R.drawable.tae_angry,R.drawable.bg_7));
 
         changeTextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 textView.setVisibility(View.GONE);
-
                 Dialog dialogue = null;
-
                 if (Index >= 0 && Index < dialogues.size()) {
                     dialogue = dialogues.get(Index);
                 } else {
-                    // Navigate to the next dialog page if index is out of bounds
-                    Intent intent = new Intent(Dialogpage.this, dialog_page2.class);
+//                    Intent intent = new Intent(Dialogpage.this, dialog_page1.class);
+                    Intent intent = new Intent(Dialogpage.this, MinigameWire.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                     startActivity(intent);
-                    return; // Exit to prevent further code execution
+                    return;
                 }
 
                 // Check if the dialogue exists and update the UI
@@ -128,18 +127,19 @@ public class Dialogpage extends AppCompatActivity {
                             dialogue.getOption1Action(),
                             dialogue.getOption2Action(),
                             dialogue.getImageLeft(),
-                            dialogue.getImageRight()
+                            dialogue.getImageRight(),
+                            dialogue.getImageBackground()
                     );
                 } else {
                     // Handle the case where no dialogue exists
-                    updateDialogue("End of dialogue", null, null, null, null, null, 0, 0);
+                    updateDialogue("End of dialogue", null, null, null, null, null, 0, 0,0);
                 }
             }
 
         });
     }
 
-    private void updateDialogue(String text, String details, String option1Text, String option2Text, String option1Action, String option2Action, int charImage1Path, int charImage2Path) {
+    private void updateDialogue(String text, String details, String option1Text, String option2Text, String option1Action, String option2Action, int charImage1Path, int charImage2Path,int backgroundPath) {
         // Views
         TextView textView = findViewById(R.id.text);
         TextView detailTextView = findViewById(R.id.detail);
@@ -152,6 +152,8 @@ public class Dialogpage extends AppCompatActivity {
         View blackScreen = findViewById(R.id.blackScreen);
         ImageView charImageView1 = findViewById(R.id.characterImage1);
         ImageView charImageView2 = findViewById(R.id.characterImage2);
+        ImageView backgroundImageView = findViewById(R.id.background);
+        View blackOverlay = findViewById(R.id.black_overlay);
 
         // Animations
         Animation moveToSide = AnimationUtils.loadAnimation(this, R.anim.move_to_left);
@@ -162,6 +164,9 @@ public class Dialogpage extends AppCompatActivity {
 
         ColorFilter filter_dark = new PorterDuffColorFilter(0x77000000, PorterDuff.Mode.SRC_ATOP);
 
+        if(backgroundPath != 0){
+            fadeToBlackBeforeBackgroundChange(backgroundImageView, backgroundPath);
+        }
         // Helper method to handle image transitions and animations
         updateCharacterImage(charImage1Path, charImageView1, charImageView2, moveToSide, moveBack, filter_dark);
         updateCharacterImage(charImage2Path, charImageView2, charImageView1, moveToRight, moveBackRight, filter_dark);
@@ -247,16 +252,35 @@ public class Dialogpage extends AppCompatActivity {
             case "gameOver":
                 Intent gameOverIntent = new Intent(Dialogpage.this, GameOverPage.class);
                 gameOverIntent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+
+                message = getString(R.string.c1_w9_a);
+                gameOverIntent.putExtra("message", message);
+
                 startActivity(gameOverIntent);
+                break;
+            case "gameOverCat1":
+                Intent gameOverCat1Intent = new Intent(Dialogpage.this, GameOverPage.class);
+                gameOverCat1Intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                message = getString(R.string.c1_w15_end);
+                gameOverCat1Intent.putExtra("message", message);
+                startActivity(gameOverCat1Intent);
+                break;
+            case "gameOverCat2":
+                Intent gameOverCat2Intent = new Intent(Dialogpage.this, GameOverPage.class);
+                gameOverCat2Intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                message = getString(R.string.c1_w15_end_2);
+                gameOverCat2Intent.putExtra("message", message);
+                startActivity(gameOverCat2Intent);
                 break;
             case "toiletSearch":
                 //continue scene6
                 dialogues.add(new Dialog(null, getString(R.string.c1_w15_1), R.drawable.mc_cum, 0));
                 dialogues.add(new Dialog(null, getString(R.string.c1_w15_2), 0, R.drawable.tae_surprised));
                 dialogues.add(new Dialog(null, getString(R.string.c1_w15_3), 0, R.drawable.pued_scared));
-                dialogues.add(new Dialog(null, getString(R.string.c1_w15_4), R.drawable.mc_surprised, 0));
+
+                dialogues.add(new Dialog(getString(R.string.c1_w15_4)," ", R.drawable.mc_surprised, 0));
                 //scene9
-                dialogues.add(new Dialog(getString(R.string.c1_s9_d), getString(R.string.c1_s9_d), 0, 0));
+                dialogues.add(new Dialog(getString(R.string.c1_s9_d), " ", 0, 0));
                 Index++;
                 break;
             case "noToiletSearch":
@@ -264,7 +288,7 @@ public class Dialogpage extends AppCompatActivity {
                 dialogues.add(new Dialog(null, getString(R.string.c1_w16_1), 0, R.drawable.tae_surprised));
                 dialogues.add(new Dialog(null, getString(R.string.c1_w16_2), 0, R.drawable.pued_scared2));
                 dialogues.add(new Dialog(null, getString(R.string.c1_w16_3) , R.drawable.mc_normal, 0));
-                dialogues.add(new Dialog(null, getString(R.string.c1_w16_3), getString(R.string.c1_w16_2a), getString(R.string.c1_w16_2b), "gameOver", "", 0, 0));
+                dialogues.add(new Dialog(null, getString(R.string.c1_w16_3), getString(R.string.c1_w16_2a), getString(R.string.c1_w16_2b), "gameOverCat1", "gameOverCat2", 0, 0));
                 //scene9
                 dialogues.add(new Dialog(getString(R.string.c1_w17), getString(R.string.c1_w17), R.drawable.mc_scared, 0));
                 Index++;
@@ -291,4 +315,26 @@ public class Dialogpage extends AppCompatActivity {
         handler.post(typingRunnable);
     }
 
+    private void fadeToBlackBeforeBackgroundChange(ImageView backgroundImageView, int backgroundPath) {
+        View blackOverlay = findViewById(R.id.black_overlay);
+        blackOverlay.setVisibility(View.VISIBLE);
+
+        ObjectAnimator fadeToBlack = ObjectAnimator.ofFloat(blackOverlay, "alpha", 0f, 1f);
+        fadeToBlack.setDuration(750);
+
+        ObjectAnimator fadeInOverlay = ObjectAnimator.ofFloat(blackOverlay, "alpha", 1f, 0f);
+        fadeInOverlay.setDuration(750);
+
+        fadeToBlack.addListener(new Animator.AnimatorListener() {
+            @Override public void onAnimationEnd(Animator animation) {
+                backgroundImageView.setImageResource(backgroundPath);
+                fadeInOverlay.start();
+            }
+            @Override public void onAnimationStart(Animator animation) {}
+            @Override public void onAnimationCancel(Animator animation) {}
+            @Override public void onAnimationRepeat(Animator animation) {}
+        });
+
+        fadeToBlack.start();
+    }
 }
