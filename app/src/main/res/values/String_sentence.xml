@@ -56,7 +56,8 @@
     <string name="c1_w16_2a">เล่นกับแมว</string>
     <string name="c1_w16_2b">ไม่สนใจแมว</string>
     <string name="c1_w16_3">น้องไทม์: ฉันว่ามันน่ารักดีออก!!!!</string>
-    <string name="c1_w15_end">ตาย เพราะ ติดเชื้อโคโรน่าเอดส์จากเเมว...โดน Triple Kills\n<b>GameOver</b></string>
+    <string name="c1_w15_end">ตาย เพราะ ติดเชื้อโคโรน่าเอดส์จากเเมว...โดน Triple Kills</string>
+    <string name="c1_w15_end_2">ตาย เพราะ แมวเห็นว่าคุณเมิน เลยโจมตีด้วยกรงเล็บใส้ด้านหลัง</string>
     <string name="c1_w9_a">สุดท้าย หลังจากวันนั้น ณ ตึกบร.5 ก็ไม่มีใครเห็นเหล่านักศึกษาหนุ่มอีกเลย...\n<b>GameOver</b></string>
     <string name="c2_w10_7_a">ตาย เพราะ โดนพรี่โตจู่โจมโดยไม่ได้ป้องกัน...\n<b>GameOver</b></string>
     <string name="c1_w17">น้องไทม์: ลาก่อนแมวปริศนา??</string>
