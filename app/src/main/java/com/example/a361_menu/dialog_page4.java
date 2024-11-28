@@ -62,8 +62,10 @@ public class dialog_page4 extends AppCompatActivity {
         dialogues.add(new Dialog(null, getString(R.string.b1_mc_thoughts_1), R.drawable.mc_scared, 0));
         dialogues.add(new Dialog(null, getString(R.string.b1_mc_thoughts_1), getString(R.string.c2_use_item_choice), getString(R.string.c2_no_item_choice), "", "gameOver", 1, 0));
         dialogues.add(new Dialog(null, getString(R.string.b1_mc_transform_hk), R.drawable.mc_cum, 0));
-        dialogues.add(new Dialog(null, getString(R.string.b1_brother_to_reaction_hk), 0, R.drawable.ricardo_surprised));
-        //minigame //dialogues.add(ไปไงต่อเว้)
+        dialogues.add(new Dialog(null, getString(R.string.b1_brother_to_reaction_hk), 0, R.drawable.ricardo_surprised, "startMinigame"));
+
+
+
 
 
         changeTextButton.setOnClickListener(new View.OnClickListener() {
