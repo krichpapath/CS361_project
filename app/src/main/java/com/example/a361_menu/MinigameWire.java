@@ -1,5 +1,7 @@
 package com.example.a361_menu;
 
+import static java.security.AccessController.getContext;
+
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -46,6 +48,13 @@ public class MinigameWire extends AppCompatActivity {
 
         init();
     }
+
+    @Override
+    public void onBackPressed() {
+        resetGame(); // Reset the game if back is pressed
+        super.onBackPressed();
+    }
+
 
     private void init() {
         paint = new Paint();
@@ -191,9 +200,14 @@ public class MinigameWire extends AppCompatActivity {
         private void checkWinCondition() {
             if (connectedLines.size() == COLORS_LEFT.length) {
                 Toast.makeText(getContext(), "You Win!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(MinigameWire.this, dialog_page1.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-                startActivity(intent);
+
+                // Reset the game after a delay (optional)
+                wireConnectionView.postDelayed(() -> {
+                    resetGame();
+                    Intent intent = new Intent(MinigameWire.this, dialog_page1.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                    startActivity(intent);
+                }, 1500); // 1.5-second delay
             }
         }
     }
@@ -221,4 +235,14 @@ public class MinigameWire extends AppCompatActivity {
             this.color = color;
         }
     }
+
+    private void resetGame() {
+        selectedStartIndex = -1;
+        isDragging = false;
+        startPoints.clear();
+        endPoints.clear();
+        connectedLines.clear();
+        wireConnectionView.invalidate(); // Redraw the view
+    }
+
 }
